@@ -1,0 +1,18 @@
+# Ignore the virtual environment folder
+venv/
+
+# Ignore PyInstaller build and distribution folders
+/build/
+dist/
+*.spec
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore other IDE-specific files (optional)
+.idea/
+*.swp
+*.swo
+*.DS_Store
