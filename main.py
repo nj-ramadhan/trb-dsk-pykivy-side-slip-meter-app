@@ -521,6 +521,9 @@ class ScreenMain(MDScreen):
             # stream.close()
             # audio.terminate() 
 
+    def exec_start_hlm(self):
+        print("Mulai HeadLamp Test")
+
     def open_screen_wtm(self):
         self.screen_manager.current = 'screen_wtm'
 
