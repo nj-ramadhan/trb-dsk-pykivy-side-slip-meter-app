@@ -3,7 +3,8 @@
 #:import NoTransition kivy.uix.screenmanager.NoTransition
 #:include screen_login.kv
 #:include screen_main.kv
-#:include screen_counter.kv
+#:include screen_wtm.kv
+#:include screen_slm.kv
 
 # ScreenManager:
 <RootScreen>:
@@ -20,8 +21,13 @@
         name: 'screen_main'
         screen_manager: screen_manager
 
-    ScreenCounter:
-        id: screen_counter
-        name: 'screen_counter'
+    ScreenWTM:
+        id: screen_wtm
+        name: 'screen_wtm'
         screen_manager: screen_manager   
+
+    ScreenSLM:
+        id: screen_slm
+        name: 'screen_slm'
+        screen_manager: screen_manager
 
