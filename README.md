@@ -1,4 +1,4 @@
-# Window Tint Meter
+# SIde Slip Tester
  Desktop application for Window Tint Meter
 
 ## for Windows OS
@@ -8,6 +8,6 @@ clone this repository
 
 Install python 3.9.x
 
-install required python library pip install -r requirment.txt
+install required python library pip install -r requirments.txt
 
 install MSVC Runtime for Windows PC pip install msvc-runtime
