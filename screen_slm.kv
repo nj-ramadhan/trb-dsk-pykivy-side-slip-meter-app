@@ -1,6 +1,6 @@
 #:kivy 2.1.0
 
-<ScreenCounter>:
+<ScreenSLM>:
     MDBoxLayout:
         orientation: "vertical"
 
@@ -34,7 +34,7 @@
 
 				MDLabel:
 					id: subtitle            
-					text: "WINDOW TINT METER / WTM"
+					text: "SOUND LEVEL METER / SLM"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H5'
@@ -45,15 +45,14 @@
 				orientation: "vertical"
 				size_hint_x: 0.15
 
-				MDRectangleFlatIconButton:
-					id: bt_logout
-					icon: "logout"
-					text: "LOGOUT"
+				MDIconButton:
+					id: bt_shutdown
+					icon: "power"
 					md_bg_color: "#FF2A2A"
 					theme_text_color: "Custom"
 					text_color: "#EEEEEE"
 					size_hint_x: 1
-					on_press: root.exec_logout()
+					on_press: root.exec_shutdown()
 
 				MDLabel:
 					id: lb_time
@@ -213,7 +212,7 @@
 						id: layout_sound
 
 						AsyncImage:
-							source: 'assets/wtm-1100-display-width.png'
+							source: 'assets/pce-322A-display-width.png'
 							pos_hint: {'x':.0, 'y':.0}
 							fit_mode: 'contain' #scale-down, fill, contain, cover
 
@@ -226,7 +225,7 @@
 							pos_hint: {'x':.0, 'y':.20}
 
 						MDLabel:
-							id: lb_window_tint
+							id: lb_sound
 							text: "..."
 							halign: "center"
 							valign: "middle"
@@ -321,7 +320,7 @@
 						md_bg_color: "#EEEEEE"
 						theme_text_color: "Custom"
 						text_color: "#000000"
-						font_style: 'Subtitle1'
+						font_style: 'Subtitle2'
 
 			MDBoxLayout:
 				orientation: "vertical"

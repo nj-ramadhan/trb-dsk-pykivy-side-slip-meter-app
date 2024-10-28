@@ -1,6 +1,6 @@
 #:kivy 2.1.0
 
-<ScreenMain>:
+<ScreenWTM>:
     MDBoxLayout:
         orientation: "vertical"
 
@@ -31,7 +31,6 @@
 					font_style: 'H3'
 					theme_text_color: "Custom"
 					text_color: "#FFFFFF"
-
 
 				MDLabel:
 					id: subtitle            
@@ -97,160 +96,180 @@
 			orientation: "horizontal"
 			size_hint_y: 0.7
 			padding:20
+			spacing:20
 
 			MDBoxLayout:
+				id: layout_display
 				orientation: "horizontal"
-				spacing:50
 
 				MDBoxLayout:
 					orientation: "vertical"
-					size_hint_x: 0.7
-					spacing: 20
+					size_hint_x: 0.5
+					padding:20
+					spacing:20
 
 					MDBoxLayout:
-						orientation: "horizontal"
-						size_hint_y: 0.1
-
-						MDRectangleFlatIconButton:
-							text: "RELOAD TABLE"
-							icon: "reload"
-							theme_text_color: "Custom"
-							text_color: "#EEEEEE"
-							md_bg_color: "4471C4"
-							on_press: root.exec_reload_table()
+						orientation: "vertical"
+						size_hint_y: 0.75
+						spacing:10
 
 						MDLabel:
-							text: "ANTRIAN KENDARAAN"
+							text: "IDENTITAS KENDARAAN"
 							halign: "center"
 							valign: "middle"
 							font_style: 'H6'
 
-					MDBoxLayout:
-						id: layout_table
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "No. Antrian"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+							MDLabel:
+								id: lb_no_antrian
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "No. Reg"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+							MDLabel:
+								id: lb_no_reg
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "No. Uji"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+							MDLabel:
+								id: lb_no_uji
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Nama"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+							MDLabel:
+								id: lb_nama
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Jenis Kendaraan"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+							MDLabel:
+								id: lb_jenis_kendaraan
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								id: lb_status
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+					MDLabel:
+						id: lb_test_result
+						halign: "center"
+						valign: "middle"
+						theme_text_color: "Custom"
+						font_style: 'H3'
+						size_hint_y: 0.25
 
 				MDBoxLayout:
 					orientation: "vertical"
-					size_hint_x: 0.3
-					spacing: 10
+					size_hint_x: 0.5
 
-					MDLabel:
-						text: "IDENTITAS KENDARAAN"
-						halign: "center"
-						valign: "middle"
-						font_style: 'H6'
+					MDFloatLayout:
+						id: layout_sound
 
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "No. Antrian"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						AsyncImage:
+							source: 'assets/wtm-1100-display-width.png'
+							pos_hint: {'x':.0, 'y':.0}
+							fit_mode: 'contain' #scale-down, fill, contain, cover
 
 						MDLabel:
-							id: lb_no_antrian
-							halign: "left"
+							id: lb_test_subtitle
+							text: "MEMULAI PENGUKURAN"
+							halign: "center"
 							valign: "middle"
 							font_style: 'H6'
-
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "No. Reg"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+							pos_hint: {'x':.0, 'y':.20}
 
 						MDLabel:
-							id: lb_no_reg
-							halign: "left"
+							id: lb_window_tint
+							text: "..."
+							halign: "center"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Display'
+							font_size: '80dp'
+							pos_hint: {'x':.0, 'y':.0}
 
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "No. Uji"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						MDRectangleFlatIconButton:
+						# MDFloatingActionButton:
+							id: bt_reload
+							text: "ULANGI"
+							icon: "reload"
+							theme_text_color: "Custom"
+							text_color: "#EEEEEE"
+							pos_hint: {'x':.275, 'y':.06}
+							disabled: True
+							on_press: root.exec_reload()
 
-						MDLabel:
-							id: lb_no_uji
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						MDRectangleFlatIconButton:
+						# MDFloatingActionButton:
+							id: bt_save
+							text: "SIMPAN"
+							icon: "printer"
+							theme_text_color: "Custom"
+							text_color: "#EEEEEE"
+							pos_hint: {'x':.425, 'y':.06}
+							disabled: True
+							on_press: root.exec_save()
+
+						MDRectangleFlatIconButton:
+						# MDIconButton:
+						# MDFloatingActionButton:
+							id: bt_back
+							text: "KEMBALI"
+							icon: "arrow-left"
+							theme_text_color: "Custom"
+							md_bg_color: "4471C4"
+							text_color: "#EEEEEE"
+							pos_hint: {'x':.575, 'y':.06}
+							on_press: root.open_screen_main()
 
 
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "Nama"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
-
-						MDLabel:
-							id: lb_nama
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
-
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "Jenis Kendaraan"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
-
-						MDLabel:
-							id: lb_jenis_kendaraan
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
-
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							id: lb_status
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
-
-					MDRectangleFlatIconButton:
-						id: bt_start_wtm
-						icon: "play"
-						text: "MULAI WINDOW TEST"
-						halign: "center"
-						theme_text_color: "Custom"
-						text_color: "#EEEEEE"
-						md_bg_color: "#19A56B"							
-						disabled: True
-						on_press: root.exec_start_wtm()
-
-					MDRectangleFlatIconButton:
-						id: bt_start_slm
-						icon: "play"
-						text: "MULAI SOUND TEST"
-						halign: "center"
-						theme_text_color: "Custom"
-						text_color: "#EEEEEE"
-						md_bg_color: "#19A56B"							
-						disabled: True
-						on_press: root.exec_start_slm()
-
-					MDRectangleFlatIconButton:
-						id: bt_start_hlm
-						icon: "play"
-						text: "MULAI HEADLAMP TEST"
-						halign: "center"
-						theme_text_color: "Custom"
-						text_color: "#EEEEEE"
-						md_bg_color: "#19A56B"							
-						disabled: False
-						on_press: root.exec_start_hlm()
-
+									
 		# footer layout
         MDBoxLayout:
             orientation: "horizontal"
@@ -319,7 +338,7 @@
 
 				MDLabel:
 					id: lb_info
-					text: "Silahkan Pilih Kendaraan yang akan diuji dari Tabel yang Tersedia"
+					text: "Ambang Batas Kebisingan adalah 83 dB hingga 118 dB"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H6'
