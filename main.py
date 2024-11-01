@@ -78,6 +78,9 @@ TB_SIDESLIP = config['mysql']['TB_SIDESLIP']
 TB_USER = config['mysql']['TB_USER']
 TIME_OUT = 500
 
+flag_conn_stat = False
+flag_play = False
+
 dt_side_slip_value = 0
 dt_side_slip_flag = 0
 dt_side_slip_user = 1
@@ -178,8 +181,6 @@ class ScreenMain(MDScreen):
             flag_conn_stat = False
 
     def delayed_init(self, dt):
-        Clock.schedule_interval(self.regular_update_connection, 5)
-        Clock.schedule_interval(self.regular_get_data, 0.5)
         Clock.schedule_interval(self.regular_update_display, 1)
         layout = self.ids.layout_table
         
@@ -218,7 +219,7 @@ class ScreenMain(MDScreen):
             dt_no_uji               = row.table.recycle_data[start_index + 3]["text"]
             dt_nama                 = row.table.recycle_data[start_index + 4]["text"]
             dt_jenis_kendaraan      = row.table.recycle_data[start_index + 5]["text"]
-            dt_side_slip_flag             = row.table.recycle_data[start_index + 6]["text"]
+            dt_side_slip_flag       = row.table.recycle_data[start_index + 6]["text"]
 
         except Exception as e:
             toast_msg = f'error update table: {e}'
@@ -368,7 +369,6 @@ class ScreenMain(MDScreen):
             print(toast_msg)
 
     def exec_start(self):
-
         global flag_play
 
         if(not flag_play):
