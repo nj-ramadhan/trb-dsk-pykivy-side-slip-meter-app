@@ -78,9 +78,6 @@ TB_SIDESLIP = config['mysql']['TB_SIDESLIP']
 TB_USER = config['mysql']['TB_USER']
 TIME_OUT = 500
 
-flag_conn_stat = False
-flag_play = False
-
 dt_side_slip_value = 0
 dt_side_slip_flag = 0
 dt_side_slip_user = 1
