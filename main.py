@@ -17,6 +17,7 @@ import configparser
 import serial.tools.list_ports as ports
 import hashlib
 import serial
+from pymodbus.client import ModbusTcpClient
 
 colors = {
     "Red": {
@@ -91,6 +92,8 @@ dt_no_uji = ""
 dt_nama = ""
 dt_jenis_kendaraan = ""
 
+modbus_client = ModbusTcpClient('192.168.1.111')
+
 class ScreenLogin(MDScreen):
     def __init__(self, **kwargs):
         super(ScreenLogin, self).__init__(**kwargs)
@@ -141,7 +144,6 @@ class ScreenMain(MDScreen):
     def __init__(self, **kwargs):
         super(ScreenMain, self).__init__(**kwargs)
         global mydb, db_antrian
-        global audio, stream
         global flag_conn_stat, flag_play
         global count_starting, count_get_data
 
@@ -166,46 +168,22 @@ class ScreenMain(MDScreen):
             toast(toast_msg)           
 
     def regular_update_connection(self, dt):
-        global printer, wtm_device
         global flag_conn_stat
 
         try:
-            com_ports = list(ports.comports()) # create a list of com ['COM1','COM2'] 
-            for i in com_ports:
-                if i.name == COM_PORT_PRINTER:
-                    flag_conn_stat = True
-
-            printer = printerSerial(devfile = COM_PORT_PRINTER,
-                    baudrate = 38400,
-                    bytesize = 8,
-                    parity = 'N',
-                    stopbits = 1,
-                    timeout = 1.00,
-                    dsrdtr = True)    
-
-            wtm_device = serial.Serial()
-            wtm_device.baudrate = 115200
-            wtm_device.port = COM_PORT_WTM
-            parity=serial.PARITY_NONE,
-            stopbits=serial.STOPBITS_ONE,
-            bytesize=serial.EIGHTBITS        
-
-            # wtm_device = serial.Serial()devfile = COM_PORT_WTM,
-            #         baudrate = 115200,
-            #         bytesize = 8,
-            #         parity = 'N',
-            #         stopbits = 1,
-            #         timeout = 1.00)
-            
-            wtm_device.open()
-            
+            modbus_client.connect()
+            flag_conn_stat = modbus_client.connected
+            modbus_client.close()
+                      
         except Exception as e:
             toast_msg = f'error initiate Printer'
             toast(toast_msg)   
             flag_conn_stat = False
 
     def delayed_init(self, dt):
-        Clock.schedule_interval(self.regular_update_display, 1)
+        Clock.schedule_interval(self.regular_update_connection, 5)
+        Clock.schedule_interval(self.regular_get_data, 0.5)
+        Clock.schedule_interval(self.regular_update_display, 0.5)
         layout = self.ids.layout_table
         
         self.data_tables = MDDataTable(
@@ -352,40 +330,18 @@ class ScreenMain(MDScreen):
             toast(toast_msg)                
 
     def regular_get_data(self, dt):
-        global flag_play
-        global dt_wtm_value
-        global count_starting, count_get_data
-        global wtm_device
+        global side_slip_val, axle_load_l_val, axle_load_r_val, speed_val
         try:
-            if(count_starting > 0):
-                count_starting -= 1              
+            if flag_conn_stat:
+                modbus_client.connect()
+                side_slip_registers = modbus_client.read_holding_registers(1612, 1, slave=1) #V1100
+                modbus_client.close()
 
-            if(count_get_data > 0):
-                count_get_data -= 1
+                side_slip_val = side_slip_registers.registers[0] / 10
                 
-            elif(count_get_data <= 0):
-                # flag_play = False
-                # Clock.unschedule(self.regular_get_data)
-
-            # if(count_starting <= 0):
-                arr_ref = np.loadtxt("data\sample_data.csv", delimiter=";", dtype=str, skiprows=1)
-                arr_val_ref = arr_ref[:,0]
-                arr_data_ref = arr_ref[:,1:]
-
-                data_byte = wtm_device.readline().decode("utf-8").strip()  # read the incoming data and remove newline character
-                if data_byte != "":
-                    arr_data_byte = np.array(data_byte.split())
-
-                    for i in range(arr_val_ref.size):
-                        if(np.array_equal(arr_data_byte, arr_data_ref[i])):
-                            dt_wtm_value = float(arr_val_ref[i])
                 
-                flag_play = False
-                Clock.unschedule(self.regular_get_data)
-
         except Exception as e:
-            toast_msg = f'error get data: {e}'
-            print(toast_msg) 
+            Logger.error(e)
 
     def exec_reload_table(self):
         global mydb, db_antrian
@@ -404,10 +360,10 @@ class ScreenMain(MDScreen):
             print(toast_msg)
 
     def exec_start(self):
-        global flag_play, stream, audio
+
+        global flag_play
 
         if(not flag_play):
-            stream.start_stream()
             Clock.schedule_interval(self.regular_get_data, 1)
             self.open_screen_counter()
             flag_play = True
