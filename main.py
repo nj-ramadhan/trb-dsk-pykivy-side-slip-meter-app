@@ -76,6 +76,9 @@ DB_PASSWORD = config['mysql']['DB_PASSWORD']
 DB_NAME = config['mysql']['DB_NAME']
 TB_SIDESLIP = config['mysql']['TB_SIDESLIP']
 TB_USER = config['mysql']['TB_USER']
+
+MAX_SIDE_SLIP = float(config['standard']['MAX_SIDE_SLIP']) # in mm
+
 TIME_OUT = 500
 
 dt_side_slip_value = 0
@@ -283,15 +286,15 @@ class ScreenMain(MDScreen):
             if(count_starting <= 0):
                 screen_counter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
                 screen_counter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
-                screen_counter.ids.lb_info.text = "Ambang Batas Bergesernya Roda Kendaraan adalah 5 cm"
+                screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {MAX_SIDE_SLIP} mm"
                                                
             elif(count_starting > 0):
                 if(flag_play):
                     screen_counter.ids.lb_test_subtitle.text = "MEMULAI PENGUKURAN"
                     screen_counter.ids.lb_side_slip.text = str(count_starting)
-                    screen_counter.ids.lb_info.text = "Silahkan Nyalakan Klakson Kendaraan"
+                    screen_counter.ids.lb_info.text = "Silahkan Gerakkan Kendaraan Anda Tanpa Memegang Kemudi"
 
-            if(dt_side_slip_value <= 5):
+            if(dt_side_slip_value <= MAX_SIDE_SLIP):
                 screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
             else:
                 screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Diluar Ambang Batas"
@@ -299,7 +302,7 @@ class ScreenMain(MDScreen):
             if(count_get_data <= 0):
                 if(not flag_play):
                     screen_counter.ids.lb_test_result.size_hint_y = 0.25
-                    if(dt_side_slip_value <= 5):
+                    if(dt_side_slip_value <= MAX_SIDE_SLIP):
                         screen_counter.ids.lb_test_result.md_bg_color = colors['Green']['200']
                         screen_counter.ids.lb_test_result.text = "LULUS"
                         dt_side_slip_flag = "Lulus"
