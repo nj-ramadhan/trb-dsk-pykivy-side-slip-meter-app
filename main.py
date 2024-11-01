@@ -81,10 +81,10 @@ COM_PORT_PRINTER = config['device']['COM_PORT_PRINTER']
 COM_PORT_WTM = config['device']['COM_PORT_WTM']
 TIME_OUT = 500
 
-dt_wtm_value = 0
-dt_wtm_flag = 0
-dt_wtm_user = 1
-dt_wtm_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
+dt_side_slip_value = 0
+dt_side_slip_flag = 0
+dt_side_slip_user = 1
+dt_side_slip_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
 dt_user = "SILAHKAN LOGIN"
 dt_no_antrian = ""
 dt_no_reg = ""
@@ -108,7 +108,7 @@ class ScreenLogin(MDScreen):
 
     def exec_login(self):
         global mydb, db_users
-        global dt_wtm_user, dt_user
+        global dt_side_slip_user, dt_user
 
         try:
             input_username = self.ids.tx_username.text
@@ -129,7 +129,7 @@ class ScreenLogin(MDScreen):
             else:
                 toast_msg = f'Berhasil Masuk, Selamat Datang {myresult[1]}'
                 toast(toast_msg)
-                dt_wtm_user = myresult[0]
+                dt_side_slip_user = myresult[0]
                 dt_user = myresult[1]
                 self.ids.tx_username.text = ""
                 self.ids.tx_password.text = "" 
@@ -176,14 +176,14 @@ class ScreenMain(MDScreen):
             modbus_client.close()
                       
         except Exception as e:
-            toast_msg = f'error initiate Printer'
+            toast_msg = f'error initiate PLC'
             toast(toast_msg)   
             flag_conn_stat = False
 
     def delayed_init(self, dt):
         Clock.schedule_interval(self.regular_update_connection, 5)
         Clock.schedule_interval(self.regular_get_data, 0.5)
-        Clock.schedule_interval(self.regular_update_display, 0.5)
+        Clock.schedule_interval(self.regular_update_display, 1)
         layout = self.ids.layout_table
         
         self.data_tables = MDDataTable(
@@ -212,7 +212,7 @@ class ScreenMain(MDScreen):
 
     def on_row_press(self, table, row):
         global dt_no_antrian, dt_no_reg, dt_no_uji, dt_nama, dt_jenis_kendaraan
-        global dt_wtm_flag, dt_wtm_value, dt_wtm_user, dt_wtm_post
+        global dt_side_slip_flag, dt_side_slip_value, dt_side_slip_user, dt_side_slip_post
 
         try:
             start_index, end_index  = row.table.recycle_data[row.index]["range"]
@@ -221,7 +221,7 @@ class ScreenMain(MDScreen):
             dt_no_uji               = row.table.recycle_data[start_index + 3]["text"]
             dt_nama                 = row.table.recycle_data[start_index + 4]["text"]
             dt_jenis_kendaraan      = row.table.recycle_data[start_index + 5]["text"]
-            dt_wtm_flag             = row.table.recycle_data[start_index + 6]["text"]
+            dt_side_slip_flag             = row.table.recycle_data[start_index + 6]["text"]
 
         except Exception as e:
             toast_msg = f'error update table: {e}'
@@ -229,9 +229,9 @@ class ScreenMain(MDScreen):
 
     def regular_update_display(self, dt):
         global flag_conn_stat
-        global dt_wtm_value, count_starting, count_get_data
+        global dt_side_slip_value, count_starting, count_get_data
         global dt_user, dt_no_antrian, dt_no_reg, dt_no_uji, dt_nama, dt_jenis_kendaraan
-        global dt_wtm_flag, dt_wtm_value, dt_wtm_user, dt_wtm_post
+        global dt_side_slip_flag, dt_side_slip_value, dt_side_slip_user, dt_side_slip_post
         try:
             screen_login = self.screen_manager.get_screen('screen_login')
             screen_counter = self.screen_manager.get_screen('screen_counter')
@@ -255,7 +255,7 @@ class ScreenMain(MDScreen):
             screen_counter.ids.lb_nama.text = str(dt_nama)
             screen_counter.ids.lb_jenis_kendaraan.text = str(dt_jenis_kendaraan)
 
-            if(dt_wtm_flag == "Belum Tes"):
+            if(dt_side_slip_flag == "Belum Tes"):
                 self.ids.bt_start.disabled = False
             else:
                 self.ids.bt_start.disabled = True
@@ -271,48 +271,48 @@ class ScreenMain(MDScreen):
 
             if(not flag_conn_stat):
                 self.ids.lb_comm.color = colors['Red']['A200']
-                self.ids.lb_comm.text = 'Printer Tidak Terhubung'
+                self.ids.lb_comm.text = 'PLC Tidak Terhubung'
                 screen_login.ids.lb_comm.color = colors['Red']['A200']
-                screen_login.ids.lb_comm.text = 'Printer Tidak Terhubung'
+                screen_login.ids.lb_comm.text = 'PLC Tidak Terhubung'
                 screen_counter.ids.lb_comm.color = colors['Red']['A200']
-                screen_counter.ids.lb_comm.text = 'Printer Tidak Terhubung'
+                screen_counter.ids.lb_comm.text = 'PLC Tidak Terhubung'
 
             else:
                 self.ids.lb_comm.color = colors['Blue']['200']
-                self.ids.lb_comm.text = 'Printer Terhubung'
+                self.ids.lb_comm.text = 'PLC Terhubung'
                 screen_login.ids.lb_comm.color = colors['Blue']['200']
-                screen_login.ids.lb_comm.text = 'Printer Terhubung'
+                screen_login.ids.lb_comm.text = 'PLC Terhubung'
                 screen_counter.ids.lb_comm.color = colors['Blue']['200']
-                screen_counter.ids.lb_comm.text = 'Printer Terhubung'
+                screen_counter.ids.lb_comm.text = 'PLC Terhubung'
 
             if(count_starting <= 0):
                 screen_counter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
-                screen_counter.ids.lb_window_tint.text = str(np.round(dt_wtm_value, 2))
-                screen_counter.ids.lb_info.text = "Ambang Batas Tingkat Meneruskan Cahaya pada Kaca Kendaraan Anda adalah 70%"
+                screen_counter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
+                screen_counter.ids.lb_info.text = "Ambang Batas Bergesernya Roda Kendaraan adalah 5 cm"
                                                
             elif(count_starting > 0):
                 if(flag_play):
                     screen_counter.ids.lb_test_subtitle.text = "MEMULAI PENGUKURAN"
-                    screen_counter.ids.lb_window_tint.text = str(count_starting)
+                    screen_counter.ids.lb_side_slip.text = str(count_starting)
                     screen_counter.ids.lb_info.text = "Silahkan Nyalakan Klakson Kendaraan"
 
-            if(dt_wtm_value >= 70):
-                screen_counter.ids.lb_info.text = "Kaca Kendaraan Anda Memiliki Tingkat Meneruskan Cahaya Dalam Range Ambang Batas"
+            if(dt_side_slip_value <= 5):
+                screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
             else:
-                screen_counter.ids.lb_info.text = "Kaca Kendaraan Anda Memiliki Tingkat Meneruskan Cahaya Diluar Ambang Batas"
+                screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Diluar Ambang Batas"
 
             if(count_get_data <= 0):
                 if(not flag_play):
                     screen_counter.ids.lb_test_result.size_hint_y = 0.25
-                    if(dt_wtm_value >= 70):
+                    if(dt_side_slip_value <= 5):
                         screen_counter.ids.lb_test_result.md_bg_color = colors['Green']['200']
                         screen_counter.ids.lb_test_result.text = "LULUS"
-                        dt_wtm_flag = "Lulus"
+                        dt_side_slip_flag = "Lulus"
                         screen_counter.ids.lb_test_result.text_color = colors['Green']['700']
                     else:
                         screen_counter.ids.lb_test_result.md_bg_color = colors['Red']['A200']
                         screen_counter.ids.lb_test_result.text = "TIDAK LULUS"
-                        dt_wtm_flag = "Tidak Lulus"
+                        dt_side_slip_flag = "Tidak Lulus"
                         screen_counter.ids.lb_test_result.text_color = colors['Red']['A700']
 
             elif(count_get_data > 0):
@@ -330,18 +330,29 @@ class ScreenMain(MDScreen):
             toast(toast_msg)                
 
     def regular_get_data(self, dt):
-        global side_slip_val, axle_load_l_val, axle_load_r_val, speed_val
+        global count_starting, count_get_data
+        global dt_side_slip_value
+        global flag_play
         try:
+            if(count_starting > 0):
+                count_starting -= 1              
+
+            if(count_get_data > 0):
+                count_get_data -= 1
+                
+            elif(count_get_data <= 0):
+                flag_play = False
+                Clock.unschedule(self.regular_get_data)
+
             if flag_conn_stat:
                 modbus_client.connect()
                 side_slip_registers = modbus_client.read_holding_registers(1612, 1, slave=1) #V1100
                 modbus_client.close()
 
-                side_slip_val = side_slip_registers.registers[0] / 10
-                
+                dt_side_slip_value = side_slip_registers.registers[0] / 10
                 
         except Exception as e:
-            Logger.error(e)
+            print(e)
 
     def exec_reload_table(self):
         global mydb, db_antrian
@@ -395,24 +406,22 @@ class ScreenCounter(MDScreen):
         count_get_data = 10
 
         if(not flag_play):
-            stream.start_stream()
             Clock.schedule_interval(screen_main.regular_get_data, 1)
             flag_play = True
 
     def exec_reload(self):
         global flag_play
-        global count_starting, count_get_data, dt_wtm_value
+        global count_starting, count_get_data, dt_side_slip_value
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
         count_starting = 3
         count_get_data = 10
-        dt_wtm_value = 0
+        dt_side_slip_value = 0
         self.ids.bt_reload.disabled = True
-        self.ids.lb_window_tint.text = "..."
+        self.ids.lb_side_slip.text = "..."
 
         if(not flag_play):
-            stream.start_stream()
             Clock.schedule_interval(screen_main.regular_get_data, 1)
             flag_play = True
 
@@ -421,47 +430,19 @@ class ScreenCounter(MDScreen):
         global count_starting, count_get_data
         global mydb, db_antrian
         global dt_no_antrian, dt_no_reg, dt_no_uji, dt_nama, dt_jenis_kendaraan
-        global dt_wtm_flag, dt_wtm_value, dt_wtm_user, dt_wtm_post
-        global printer
+        global dt_side_slip_flag, dt_side_slip_value, dt_side_slip_user, dt_side_slip_post
 
         self.ids.bt_save.disabled = True
 
         mycursor = mydb.cursor()
 
         sql = "UPDATE tb_cekident SET wtm_flag = %s, wtm_value = %s, wtm_user = %s, wtm_post = %s WHERE noantrian = %s"
-        sql_wtm_flag = (1 if dt_wtm_flag == "Lulus" else 2)
-        dt_wtm_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
+        sql_wtm_flag = (1 if dt_side_slip_flag == "Lulus" else 2)
+        dt_side_slip_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
         print_datetime = str(time.strftime("%d %B %Y %H:%M:%S", time.localtime()))
-        sql_val = (sql_wtm_flag, dt_wtm_value, dt_wtm_user, dt_wtm_post, dt_no_antrian)
+        sql_val = (sql_wtm_flag, dt_side_slip_value, dt_side_slip_user, dt_side_slip_post, dt_no_antrian)
         mycursor.execute(sql, sql_val)
         mydb.commit()
-
-        printer.set(align="center", normal_textsize=True)
-        printer.image("assets/logo-dishub-print.png")
-        printer.ln()
-        printer.textln("HASIL UJI TINGKAT PENERUSAN CAHAYA KACA KENDARAAN")
-        printer.set(bold=True)
-        printer.textln(f"Tanggal: {print_datetime}")
-        printer.textln("=======================================")
-        printer.set(align="left", normal_textsize=True)
-        printer.textln(f"No Antrian: {dt_no_antrian}")
-        printer.text(f"No Reg: {dt_no_reg}\t")
-        printer.textln(f"No Uji: {dt_no_uji}")
-        printer.textln(f"Nama: {dt_nama}")
-        printer.textln(f"Jenis Kendaraan: {dt_jenis_kendaraan}")
-        printer.textln("  ")
-        printer.set(double_height=True, double_width=True)
-        printer.text(f"Status:\t")
-        printer.set(bold=True)
-        printer.textln(f"{dt_wtm_flag}")
-        printer.set(bold=False)
-        printer.text(f"Nilai:\t")
-        printer.set(bold=True)
-        printer.textln(f"{str(np.round(dt_wtm_value, 2))}")
-        printer.set(align="center", normal_textsize=True)     
-        printer.textln("  ")
-        printer.image("assets/logo-trb-print.png")
-        printer.cut()
 
         self.open_screen_main()
 
