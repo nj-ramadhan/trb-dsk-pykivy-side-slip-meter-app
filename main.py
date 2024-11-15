@@ -79,6 +79,8 @@ TB_USER = config['mysql']['TB_USER']
 
 STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
 
+COUNT_STARTING = 3
+COUNT_ACQUISITION = 4
 TIME_OUT = 500
 
 dt_side_slip_value = 0
@@ -153,8 +155,8 @@ class ScreenMain(MDScreen):
         flag_conn_stat = False
         flag_play = False
 
-        count_starting = 3
-        count_get_data = 4
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         try:
             mydb = mysql.connector.connect(
             host = DB_HOST,
@@ -358,6 +360,7 @@ class ScreenMain(MDScreen):
             mycursor = mydb.cursor()
             mycursor.execute(f"SELECT noantrian, nopol, nouji, user, idjeniskendaraan, sideslip_flag FROM {TB_DATA}")
             myresult = mycursor.fetchall()
+            mydb.commit()
             db_antrian = np.array(myresult).T
 
             self.data_tables.row_data=[(f"{i+1}", f"{db_antrian[0, i]}", f"{db_antrian[1, i]}", f"{db_antrian[2, i]}", f"{db_antrian[3, i]}" ,f"{db_antrian[4, i]}", 
@@ -399,8 +402,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
 
         if(not flag_play):
             Clock.schedule_interval(screen_main.regular_get_data, 1)
@@ -412,8 +415,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         dt_side_slip_value = 0
         self.ids.bt_reload.disabled = True
         self.ids.lb_side_slip.text = "..."
@@ -449,8 +452,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         flag_play = False   
         screen_main.exec_reload_table()
         self.screen_manager.current = 'screen_main'
