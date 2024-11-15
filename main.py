@@ -1,7 +1,9 @@
 from kivy.clock import Clock
 from kivy.lang import Builder
+from kivy.logger import Logger
 from kivy.core.window import Window
 from kivy.core.text import LabelBase
+from kivy.graphics.texture import Texture
 from kivymd.font_definitions import theme_font_styles
 from kivymd.uix.datatables import MDDataTable
 from kivy.uix.screenmanager import ScreenManager
@@ -9,6 +11,7 @@ from kivymd.uix.screen import MDScreen
 from kivymd.app import MDApp
 from kivy.metrics import dp
 from kivymd.toast import toast
+from kivymd.icon_definitions import md_icons
 import numpy as np
 import time
 import mysql.connector
@@ -17,7 +20,28 @@ import configparser
 import serial.tools.list_ports as ports
 import hashlib
 import serial
+import cv2
 from pymodbus.client import ModbusTcpClient
+from kivy.core.text import LabelBase
+import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    # Jika sudah dikompilasi menjadi exe, gunakan folder tempat exe berada
+    app_path = os.path.dirname(os.path.abspath(__file__))
+else:
+    # Jika dijalankan sebagai script, gunakan path file script
+    app_path = os.path.dirname(os.path.abspath(__file__))
+
+# Load and inspect the structure of the uploaded SQL file to confirm the presence of tb_cekident
+sql_file_path = 'data/db_trb.sql'
+
+# Reading the file to check for table definitions
+with open(sql_file_path, 'r', encoding='utf-8') as file:
+    sql_content = file.readlines()
+
+# Print the first few lines to get an idea of the structure and search for tb_cekident definition
+sql_content[:50]
 
 colors = {
     "Red": {
@@ -67,9 +91,11 @@ colors = {
     },
 }
 
-#load credentials from config.ini
+config_path = os.path.join(app_path, 'config.ini')
+print(f"Path config.ini: {config_path}")
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(config_path)
+
 DB_HOST = config['mysql']['DB_HOST']
 DB_USER = config['mysql']['DB_USER']
 DB_PASSWORD = config['mysql']['DB_PASSWORD']
@@ -366,10 +392,12 @@ class ScreenMain(MDScreen):
             self.data_tables.row_data=[(f"{i+1}", f"{db_antrian[0, i]}", f"{db_antrian[1, i]}", f"{db_antrian[2, i]}", f"{db_antrian[3, i]}" ,f"{db_antrian[4, i]}", 
                                         'Belum Tes' if (int(db_antrian[5, i]) == 0) else ('Lulus' if (int(db_antrian[5, i]) == 1) else 'Tidak Lulus')) 
                                         for i in range(len(db_antrian[0]))]
-
+            toast_msg = f'berhasil'
+            toast(toast_msg)
         except Exception as e:
-            toast_msg = f'error reload table: {e}'
-            print(toast_msg)
+            print(f"Error reload table: {e}")
+            toast_msg = f'Error reload table: {e}'
+            toast(toast_msg)
 
     def exec_start(self):
         global flag_play
