@@ -74,7 +74,7 @@ DB_HOST = config['mysql']['DB_HOST']
 DB_USER = config['mysql']['DB_USER']
 DB_PASSWORD = config['mysql']['DB_PASSWORD']
 DB_NAME = config['mysql']['DB_NAME']
-TB_SIDESLIP = config['mysql']['TB_SIDESLIP']
+TB_DATA = config['mysql']['TB_DATA']
 TB_USER = config['mysql']['TB_USER']
 
 STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
@@ -356,7 +356,7 @@ class ScreenMain(MDScreen):
         global mydb, db_antrian
         try:
             mycursor = mydb.cursor()
-            mycursor.execute("SELECT noantrian, nopol, nouji, user, idjeniskendaraan, sideslip_flag FROM tb_cekident")
+            mycursor.execute(f"SELECT noantrian, nopol, nouji, user, idjeniskendaraan, sideslip_flag FROM {TB_DATA}")
             myresult = mycursor.fetchall()
             db_antrian = np.array(myresult).T
 
@@ -433,7 +433,7 @@ class ScreenCounter(MDScreen):
 
         mycursor = mydb.cursor()
 
-        sql = "UPDATE tb_cekident SET sideslip_flag = %s, sideslip_value = %s, sideslip_user = %s, sideslip_post = %s WHERE noantrian = %s"
+        sql = f"UPDATE {TB_DATA} SET sideslip_flag = %s, sideslip_value = %s, sideslip_user = %s, sideslip_post = %s WHERE noantrian = %s"
         sql_sideslip_flag = (1 if dt_side_slip_flag == "Lulus" else 2)
         dt_side_slip_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
         print_datetime = str(time.strftime("%d %B %Y %H:%M:%S", time.localtime()))
