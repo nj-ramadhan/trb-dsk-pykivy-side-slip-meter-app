@@ -91,11 +91,13 @@ DB_HOST = config['mysql']['DB_HOST']
 DB_USER = config['mysql']['DB_USER']
 DB_PASSWORD = config['mysql']['DB_PASSWORD']
 DB_NAME = config['mysql']['DB_NAME']
-TB_SIDESLIP = config['mysql']['TB_SIDESLIP']
+TB_DATA = config['mysql']['TB_DATA']
 TB_USER = config['mysql']['TB_USER']
 
 STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
 
+COUNT_STARTING = 3
+COUNT_ACQUISITION = 4
 TIME_OUT = 500
 
 dt_side_slip_value = 0
@@ -170,8 +172,8 @@ class ScreenMain(MDScreen):
         flag_conn_stat = False
         flag_play = False
 
-        count_starting = 3
-        count_get_data = 4
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         try:
             mydb = mysql.connector.connect(
             host = DB_HOST,
@@ -303,18 +305,16 @@ class ScreenMain(MDScreen):
             if(count_starting <= 0):
                 screen_counter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
                 screen_counter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
-                screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm"
-                                               
+                if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
+                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
+                else:
+                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Diluar Ambang Batas"
+
             elif(count_starting > 0):
                 if(flag_play):
                     screen_counter.ids.lb_test_subtitle.text = "MEMULAI PENGUKURAN"
                     screen_counter.ids.lb_side_slip.text = str(count_starting)
                     screen_counter.ids.lb_info.text = "Silahkan Gerakkan Kendaraan Anda Tanpa Memegang Kemudi"
-
-            if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
-                screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
-            else:
-                screen_counter.ids.lb_info.text = "Pergeseran Roda Kendaraan Anda Diluar Ambang Batas"
 
             if(count_get_data <= 0):
                 if(not flag_play):
@@ -373,8 +373,9 @@ class ScreenMain(MDScreen):
         global mydb, db_antrian
         try:
             mycursor = mydb.cursor()
-            mycursor.execute("SELECT noantrian, nopol, nouji, user, idjeniskendaraan, sideslip_flag FROM tb_cekident")
+            mycursor.execute(f"SELECT noantrian, nopol, nouji, user, idjeniskendaraan, sideslip_flag FROM {TB_DATA}")
             myresult = mycursor.fetchall()
+            mydb.commit()
             db_antrian = np.array(myresult).T
 
             self.data_tables.row_data=[(f"{i+1}", f"{db_antrian[0, i]}", f"{db_antrian[1, i]}", f"{db_antrian[2, i]}", f"{db_antrian[3, i]}" ,f"{db_antrian[4, i]}", 
@@ -418,8 +419,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
 
         if(not flag_play):
             Clock.schedule_interval(screen_main.regular_get_data, 1)
@@ -431,8 +432,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         dt_side_slip_value = 0
         self.ids.bt_reload.disabled = True
         self.ids.lb_side_slip.text = "..."
@@ -452,7 +453,7 @@ class ScreenCounter(MDScreen):
 
         mycursor = mydb.cursor()
 
-        sql = "UPDATE tb_cekident SET sideslip_flag = %s, sideslip_value = %s, sideslip_user = %s, sideslip_post = %s WHERE noantrian = %s"
+        sql = f"UPDATE {TB_DATA} SET sideslip_flag = %s, sideslip_value = %s, sideslip_user = %s, sideslip_post = %s WHERE noantrian = %s"
         sql_sideslip_flag = (1 if dt_side_slip_flag == "Lulus" else 2)
         dt_side_slip_post = str(time.strftime("%Y/%m/%d %H:%M:%S", time.localtime()))
         print_datetime = str(time.strftime("%d %B %Y %H:%M:%S", time.localtime()))
@@ -468,8 +469,8 @@ class ScreenCounter(MDScreen):
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
-        count_starting = 3
-        count_get_data = 10
+        count_starting = COUNT_STARTING
+        count_get_data = COUNT_ACQUISITION
         flag_play = False   
         screen_main.exec_reload_table()
         self.screen_manager.current = 'screen_main'
