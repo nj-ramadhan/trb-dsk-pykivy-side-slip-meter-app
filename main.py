@@ -33,15 +33,6 @@ else:
     # Jika dijalankan sebagai script, gunakan path file script
     app_path = os.path.dirname(os.path.abspath(__file__))
 
-# Load and inspect the structure of the uploaded SQL file to confirm the presence of tb_cekident
-sql_file_path = 'data/db_trb.sql'
-
-# Reading the file to check for table definitions
-with open(sql_file_path, 'r', encoding='utf-8') as file:
-    sql_content = file.readlines()
-
-# Print the first few lines to get an idea of the structure and search for tb_cekident definition
-sql_content[:50]
 
 colors = {
     "Red": {
