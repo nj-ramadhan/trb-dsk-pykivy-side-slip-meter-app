@@ -315,9 +315,9 @@ class ScreenMain(MDScreen):
                 screen_counter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
                 screen_counter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
                 if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
-                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm, Pergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
+                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
                 else:
-                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm, Pergeseran Roda Kendaraan Anda Diluar Ambang Batas"
+                    screen_counter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Diluar Ambang Batas"
 
             elif(count_starting > 0):
                 if(flag_play):
