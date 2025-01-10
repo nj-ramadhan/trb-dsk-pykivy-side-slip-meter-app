@@ -55,6 +55,8 @@ TB_MERK = config['mysql']['TB_MERK']
 
 STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
 
+SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
+
 COUNT_STARTING = 3
 COUNT_ACQUISITION = 4
 TIME_OUT = 500
@@ -373,7 +375,7 @@ class ScreenMain(MDScreen):
                 side_slip_registers = modbus_client.read_holding_registers(1612, 1, slave=1) #V1100
                 modbus_client.close()
 
-                dt_side_slip_value = side_slip_registers.registers[0] / 10
+                dt_side_slip_value = (side_slip_registers.registers[0] / 10) - (SENSOR_LENGTH / 2)
                 
         except Exception as e:
             toast_msg = f'Error Get Data: {e}'
