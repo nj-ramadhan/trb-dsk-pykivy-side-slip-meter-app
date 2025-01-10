@@ -254,7 +254,7 @@ class ScreenMain(MDScreen):
         try:
             screen_home = self.screen_manager.get_screen('screen_home')
             screen_login = self.screen_manager.get_screen('screen_login')
-            screen_slide_test = self.screen_manager.get_screen('screen_slide_test')
+            screen_slide_meter = self.screen_manager.get_screen('screen_slide_meter')
 
             self.ids.lb_time.text = str(time.strftime("%H:%M:%S", time.localtime()))
             self.ids.lb_date.text = str(time.strftime("%d/%m/%Y", time.localtime()))
@@ -262,24 +262,23 @@ class ScreenMain(MDScreen):
             screen_home.ids.lb_date.text = str(time.strftime("%d/%m/%Y", time.localtime()))
             screen_login.ids.lb_time.text = str(time.strftime("%H:%M:%S", time.localtime()))
             screen_login.ids.lb_date.text = str(time.strftime("%d/%m/%Y", time.localtime()))
-            screen_slide_test.ids.lb_time.text = str(time.strftime("%H:%M:%S", time.localtime()))
-            screen_slide_test.ids.lb_date.text = str(time.strftime("%d/%m/%Y", time.localtime()))
+            screen_slide_meter.ids.lb_time.text = str(time.strftime("%H:%M:%S", time.localtime()))
+            screen_slide_meter.ids.lb_date.text = str(time.strftime("%d/%m/%Y", time.localtime()))
 
-            screen_slide_test.ids.lb_no_antrian.text = str(dt_no_antrian)
-            screen_slide_test.ids.lb_no_pol.text = str(dt_no_pol)
-            screen_slide_test.ids.lb_no_uji.text = str(dt_no_uji)
-            screen_slide_test.ids.lb_nama.text = str(dt_nama)
-            screen_slide_test.ids.lb_jenis_kendaraan.text = str(dt_jenis_kendaraan)
-            screen_slide_test.ids.lb_status.text = str(dt_side_slip_flag)
+            screen_slide_meter.ids.lb_no_antrian.text = str(dt_no_antrian)
+            screen_slide_meter.ids.lb_no_pol.text = str(dt_no_pol)
+            screen_slide_meter.ids.lb_no_uji.text = str(dt_no_uji)
+            screen_slide_meter.ids.lb_nama.text = str(dt_nama)
+            screen_slide_meter.ids.lb_jenis_kendaraan.text = str(dt_jenis_kendaraan)
 
             if(not flag_play):
-                screen_slide_test.ids.bt_save.md_bg_color = colors['Green']['200']
-                screen_slide_test.ids.bt_save.disabled = False
-                screen_slide_test.ids.bt_reload.md_bg_color = colors['Red']['A200']
-                screen_slide_test.ids.bt_reload.disabled = False
+                screen_slide_meter.ids.bt_save.md_bg_color = colors['Green']['200']
+                screen_slide_meter.ids.bt_save.disabled = False
+                screen_slide_meter.ids.bt_reload.md_bg_color = colors['Red']['A200']
+                screen_slide_meter.ids.bt_reload.disabled = False
             else:
-                screen_slide_test.ids.bt_reload.disabled = True
-                screen_slide_test.ids.bt_save.disabled = True
+                screen_slide_meter.ids.bt_reload.disabled = True
+                screen_slide_meter.ids.bt_save.disabled = True
 
             if(not flag_conn_stat):
                 self.ids.lb_comm.color = colors['Red']['A200']
@@ -298,37 +297,37 @@ class ScreenMain(MDScreen):
                 screen_login.ids.lb_comm.text = 'PLC Terhubung'
 
             if(count_starting <= 0):
-                screen_slide_test.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
-                screen_slide_test.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
+                screen_slide_meter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
+                screen_slide_meter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
                 if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
-                    screen_slide_test.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
+                    screen_slide_meter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
                 else:
-                    screen_slide_test.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Diluar Ambang Batas"
+                    screen_slide_meter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Diluar Ambang Batas"
 
             elif(count_starting > 0):
                 if(flag_play):
-                    screen_slide_test.ids.lb_test_subtitle.text = "MEMULAI PENGUKURAN"
-                    screen_slide_test.ids.lb_side_slip.text = str(count_starting)
-                    screen_slide_test.ids.lb_info.text = "Silahkan Gerakkan Kendaraan Anda Tanpa Memegang Kemudi"
+                    screen_slide_meter.ids.lb_test_subtitle.text = "MEMULAI PENGUKURAN"
+                    screen_slide_meter.ids.lb_side_slip.text = str(count_starting)
+                    screen_slide_meter.ids.lb_info.text = "Silahkan Gerakkan Kendaraan Anda Tanpa Memegang Kemudi"
 
             if(count_get_data <= 0):
                 if(not flag_play):
                     if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
-                        screen_slide_test.ids.lb_test_result.md_bg_color = colors['Green']['200']
-                        screen_slide_test.ids.lb_test_result.text = "LULUS"
+                        screen_slide_meter.ids.lb_test_result.md_bg_color = colors['Green']['200']
+                        screen_slide_meter.ids.lb_test_result.text = "LULUS"
                         dt_side_slip_flag = "Lulus"
-                        screen_slide_test.ids.lb_test_result.text_color = colors['Green']['700']
+                        screen_slide_meter.ids.lb_test_result.text_color = colors['Green']['700']
                     else:
-                        screen_slide_test.ids.lb_test_result.md_bg_color = colors['Red']['A200']
-                        screen_slide_test.ids.lb_test_result.text = "TIDAK LULUS"
+                        screen_slide_meter.ids.lb_test_result.md_bg_color = colors['Red']['A200']
+                        screen_slide_meter.ids.lb_test_result.text = "TIDAK LULUS"
                         dt_side_slip_flag = "Tidak Lulus"
-                        screen_slide_test.ids.lb_test_result.text_color = colors['Red']['A700']
+                        screen_slide_meter.ids.lb_test_result.text_color = colors['Red']['A700']
 
             elif(count_get_data > 0):
-                    screen_slide_test.ids.lb_test_result.md_bg_color = "#EEEEEE"
+                    screen_slide_meter.ids.lb_test_result.md_bg_color = "#EEEEEE"
                     # screen_counter.ids.lb_test_result.size_hint_y = None
                     # screen_counter.ids.lb_test_result.height = dp(0)
-                    screen_slide_test.ids.lb_test_result.text = ""
+                    screen_slide_meter.ids.lb_test_result.text = ""
 
             self.ids.bt_logout.disabled = False if dt_user != '' else True
             # self.ids.bt_start.disabled = True if dt_user == '' else True if dt_check_flag != "Belum Tes" else False
@@ -336,7 +335,7 @@ class ScreenMain(MDScreen):
             self.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
             screen_home.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
             screen_login.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
-            screen_slide_test.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
+            screen_slide_meter.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
 
         except Exception as e:
             toast_msg = f'Error Update Display: {e}'
@@ -455,15 +454,15 @@ class ScreenMain(MDScreen):
             if (dt_side_slip_flag == 'Belum Tes'):
                 if(not flag_play):
                     Clock.schedule_interval(self.regular_get_data, 1)
-                    self.open_screen_slide_test()
+                    self.open_screen_slide_meter()
                     flag_play = True
             else:
                 toast(f'No. Antrian {dt_no_antrian} Sudah Tes')
         else:
             toast(f'Silahkan Login Untuk Melakukan Pengujian')        
 
-    def open_screen_slide_test(self):
-        self.screen_manager.current = 'screen_slide_test'
+    def open_screen_slide_meter(self):
+        self.screen_manager.current = 'screen_slide_meter'
 
     def exec_logout(self):
         global dt_user
@@ -499,9 +498,9 @@ class ScreenMain(MDScreen):
             toast_msg = f'Error Navigate to Main Screen: {e}'
             toast(toast_msg)   
 
-class ScreenSlideTest(MDScreen):        
+class ScreenSlideMeter(MDScreen):        
     def __init__(self, **kwargs):
-        super(ScreenSlideTest, self).__init__(**kwargs)
+        super(ScreenSlideMeter, self).__init__(**kwargs)
         Clock.schedule_once(self.delayed_init, 2)
         
     def delayed_init(self, dt):
