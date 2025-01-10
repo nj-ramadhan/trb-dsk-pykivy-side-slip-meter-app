@@ -2,25 +2,15 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.core.text import LabelBase
-from kivy.graphics.texture import Texture
-from kivy.resources import resource_add_path
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.font_definitions import theme_font_styles
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.label import MDLabel
 from kivymd.uix.card import MDCard
-from kivymd.uix.textfield import MDTextField
-from kivymd.uix.menu import MDDropdownMenu
-from kivymd.uix.button import MDIconButton, MDRectangleFlatIconButton
-from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.list import IRightBodyTouch, OneLineAvatarIconListItem
-from kivy.properties import StringProperty
-from kivy.metrics import dp
 from kivymd.toast import toast
 from kivymd.app import MDApp
 import os, sys, time, numpy as np
 import configparser, hashlib, mysql.connector
-import cv2
 from pymodbus.client import ModbusTcpClient
 
 colors = {
@@ -287,6 +277,8 @@ class ScreenMain(MDScreen):
                 screen_home.ids.lb_comm.text = 'PLC Tidak Terhubung'
                 screen_login.ids.lb_comm.color = colors['Red']['A200']
                 screen_login.ids.lb_comm.text = 'PLC Tidak Terhubung'
+                screen_slide_meter.ids.lb_comm.color = colors['Red']['A200']
+                screen_slide_meter.ids.lb_comm.text = 'PLC Tidak Terhubung'
 
             else:
                 self.ids.lb_comm.color = colors['Blue']['200']
@@ -295,6 +287,8 @@ class ScreenMain(MDScreen):
                 screen_home.ids.lb_comm.text = 'PLC Terhubung'
                 screen_login.ids.lb_comm.color = colors['Blue']['200']
                 screen_login.ids.lb_comm.text = 'PLC Terhubung'
+                screen_slide_meter.ids.lb_comm.color = colors['Blue']['200']
+                screen_slide_meter.ids.lb_comm.text = 'PLC Terhubung'
 
             if(count_starting <= 0):
                 screen_slide_meter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
@@ -325,12 +319,9 @@ class ScreenMain(MDScreen):
 
             elif(count_get_data > 0):
                     screen_slide_meter.ids.lb_test_result.md_bg_color = "#EEEEEE"
-                    # screen_counter.ids.lb_test_result.size_hint_y = None
-                    # screen_counter.ids.lb_test_result.height = dp(0)
                     screen_slide_meter.ids.lb_test_result.text = ""
 
             self.ids.bt_logout.disabled = False if dt_user != '' else True
-            # self.ids.bt_start.disabled = True if dt_user == '' else True if dt_check_flag != "Belum Tes" else False
 
             self.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
             screen_home.ids.lb_operator.text = f'Login Sebagai: {dt_user}' if dt_user != '' else 'Silahkan Login'
