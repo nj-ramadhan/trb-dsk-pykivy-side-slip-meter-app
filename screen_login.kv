@@ -15,7 +15,7 @@
                     
             Image:
                 id: logo
-                source:'assets/logo-trb-dark.png'
+                source:'assets/images/logo-trb.png'
                 size_hint_x: 0.15
                 allow_stretch: True 
 
@@ -25,16 +25,16 @@
 
 				MDLabel:
 					id: title            
-					text: "VEHICLE INSPECTION INTEGRATION SYSTEM"
+					text: "VEHICLE INSPECTION INTEGRATION MANAGEMENT SYSTEM"
 					halign: "left"
 					valign: "middle"
-					font_style: 'H3'
+					font_style: 'H4'
 					theme_text_color: "Custom"
 					text_color: "#FFFFFF"
 
 				MDLabel:
 					id: subtitle            
-					text: "SIDE SLIP TESTER"
+					text: "SLIDE SLIP TEST"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H5'
@@ -83,76 +83,119 @@
 
 		# main layout
 		MDBoxLayout:
-			orientation: "vertical"
+			id: layout_main
+			orientation: "horizontal"
 			size_hint_y: 0.7
-			padding: 50
-			spacing: 30
-
-			MDLabel:
-				text: "SILAHKAN LOGIN"
-				halign: "center"
-				valign: "middle"
-				font_style: 'H4'
-				theme_text_color: "Custom"
-				
-			MDTextField:
-				id: tx_username
-				font_size: '40sp'
-				icon_left: "account"
-				hint_text: "Nama Pengguna"
-				# text_color_normal: "#4471C4"
-				text_color_focus: "#4471C4"
-				# hint_text_color_normal: "#4471C4"
-				hint_text_color_focus: "#4471C4"
-				# line_color_normal: "#4471C4"
-				line_color_focus: "#4471C4"	
-				# icon_left_color_normal: "#4471C4"
-				icon_left_color_focus: "#4471C4"				
-				mode: "rectangle"
-
-			MDTextField:
-				id: tx_password
-				font_size: '40sp'
-				icon_left: "lock"
-				hint_text: "Password"
-				# text_color_normal: "#4471C4"
-				text_color_focus: "#4471C4"				
-				# hint_text_color_normal: "#4471C4"
-				hint_text_color_focus: "#4471C4"
-				# line_color_normal: "#4471C4"
-				line_color_focus: "#4471C4"
-				# icon_left_color_normal: "#4471C4"
-				icon_left_color_focus: "#4471C4"
-				mode: "rectangle"
-				password: True
+			padding:20
 
 			MDBoxLayout:
 				orientation: "horizontal"
-				spacing: 100
+				spacing:50
 
-				MDRectangleFlatIconButton:
-					id: bt_login
-					type: "large"
-					size_hint_x: 0.5
-					size_hint_y: 0.4
-					icon: "login"
-					text:"MASUK"
-					text_color: "#EEEEEE"
-					md_bg_color: "#4471C4"
-					font_style: 'H6'
-					on_press: root.exec_login()
+				MDBoxLayout:
+					orientation: "vertical"
+					size_hint_x: 0.1
+					spacing: 20
 
-				MDRectangleFlatIconButton:
-					id: bt_cancel
-					type: "large"
-					size_hint_x: 0.5
-					size_hint_y: 0.4
-					icon: "cancel"
-					text:"BATAL"
-					text_color: "#EEEEEE"
-					md_bg_color: "#FF2A2A"
-					font_style: 'H6'
-					on_press: root.exec_cancel()
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_home()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-home.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
+
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_login()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-login.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
+
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_main()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-realtime.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
+
+				MDBoxLayout:
+					orientation: "vertical"
+					size_hint_x: 0.9
+					padding: 50
+					spacing: 30
+
+					MDLabel:
+						text: "SILAHKAN LOGIN"
+						halign: "center"
+						valign: "middle"
+						font_style: 'H4'
+						theme_text_color: "Custom"
+						
+					MDTextField:
+						id: tx_username
+						font_size: '40sp'
+						font_name: "Recharge"
+						font_name_hint_text:'Recharge'
+						icon_left: "account"
+						hint_text: "Nama Pengguna"
+						text_color_focus: "#4471C4"
+						hint_text_color_focus: "#4471C4"
+						line_color_focus: "#4471C4"	
+						icon_left_color_focus: "#4471C4"				
+						mode: "rectangle"
+						on_text_validate: root.exec_login()
+
+					MDTextField:
+						id: tx_password
+						font_size: '40sp'
+						font_name: "Recharge"
+						font_name_hint_text:'Recharge'
+						icon_left: "lock"
+						hint_text: "Password"
+						text_color_focus: "#4471C4"
+						hint_text_color_focus: "#4471C4"
+						line_color_focus: "#4471C4"
+						icon_left_color_focus: "#4471C4"
+						mode: "rectangle"
+						password: True
+						on_text_validate: root.exec_login()
+
+					MDBoxLayout:
+						orientation: "horizontal"
+						spacing: 100
+
+						MDRectangleFlatIconButton:
+							id: bt_login
+							type: "large"
+							size_hint_x: 0.5
+							size_hint_y: 0.4
+							icon: "login"
+							text:"MASUK"
+							text_color: "#EEEEEE"
+							md_bg_color: "#4471C4"
+							font_style: 'H6'
+							on_press: root.exec_login()
+
+						MDRectangleFlatIconButton:
+							id: bt_cancel
+							type: "large"
+							size_hint_x: 0.5
+							size_hint_y: 0.4
+							icon: "cancel"
+							text:"BATAL"
+							text_color: "#EEEEEE"
+							md_bg_color: "#FF2A2A"
+							font_style: 'H6'
+							on_press: root.exec_cancel()
 
 		# footer layout
         MDBoxLayout:
@@ -167,12 +210,12 @@
 				size_hint_x: 0.4
 				
 				Image:
-					source:'assets/logo-sorong.png'
+					source:'assets/images/logo-sorong.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 
 				Image:
-					source:'assets/logo-dishub.png'
+					source:'assets/images/logo-dishub.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 

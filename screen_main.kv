@@ -15,7 +15,7 @@
                     
             Image:
                 id: logo
-                source:'assets/logo-trb-dark.png'
+                source:'assets/images/logo-trb.png'
                 size_hint_x: 0.15
                 allow_stretch: True 
 
@@ -25,17 +25,17 @@
 
 				MDLabel:
 					id: title            
-					text: "VEHICLE INSPECTION INTEGRATION SYSTEM"
+					text: "VEHICLE INSPECTION INTEGRATION MANAGEMENT SYSTEM"
 					halign: "left"
 					valign: "middle"
-					font_style: 'H3'
+					font_style: 'H4'
 					theme_text_color: "Custom"
 					text_color: "#FFFFFF"
 
 
 				MDLabel:
 					id: subtitle            
-					text: "SIDE SLIP TESTER"
+					text: "SLIDE SLIP TEST"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H5'
@@ -45,16 +45,6 @@
 			MDBoxLayout:
 				orientation: "vertical"
 				size_hint_x: 0.15
-
-				MDRectangleFlatIconButton:
-					id: bt_logout
-					icon: "logout"
-					text: "LOGOUT"
-					md_bg_color: "#FF2A2A"
-					theme_text_color: "Custom"
-					text_color: "#EEEEEE"
-					size_hint_x: 1
-					on_press: root.exec_logout()
 
 				MDLabel:
 					id: lb_time
@@ -104,131 +94,215 @@
 
 				MDBoxLayout:
 					orientation: "vertical"
-					size_hint_x: 0.7
+					size_hint_x: 0.1
 					spacing: 20
 
-					MDBoxLayout:
-						orientation: "horizontal"
-						size_hint_y: 0.1
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_home()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-home.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
 
-						MDRectangleFlatIconButton:
-							text: "RELOAD TABLE"
-							icon: "reload"
-							theme_text_color: "Custom"
-							text_color: "#EEEEEE"
-							md_bg_color: "4471C4"
-							on_press: root.exec_reload_table()
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_login()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-login.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
 
-						MDLabel:
-							text: "ANTRIAN KENDARAAN"
-							halign: "center"
-							valign: "middle"
-							font_style: 'H6'
-
-					MDBoxLayout:
-						id: layout_table
+					MDCard:
+						ripple_behavior: True
+                        on_press: root.exec_navigate_main()
+						md_bg_color: "#EEEEEE"
+                        padding: 10
+						Image:
+							source:'assets/images/icon-realtime.png'
+							size_hint_x: 0.15
+							allow_stretch: True 
 
 				MDBoxLayout:
 					orientation: "vertical"
-					size_hint_x: 0.3
-					spacing: 10
+					size_hint_x: 0.9
+					spacing: 20
 
 					MDLabel:
-						text: "IDENTITAS KENDARAAN"
+						text: "ANTRIAN KENDARAAN"
 						halign: "center"
 						valign: "middle"
 						font_style: 'H6'
+						size_hint_y: 0.05
 
 					MDBoxLayout:
 						orientation: "horizontal"
-						MDLabel:
-							text: "No. Antrian"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						md_bg_color: "#DDDDDD"
+						size_hint_y: 0.1
+						spacing: 50
 
-						MDLabel:
-							id: lb_no_antrian
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						MDBoxLayout:
+							orientation: "vertical"
+							MDLabel:
+								text: "PENDAFTARAN"
+								halign: "center"
+								valign: "middle"
+								font_style: 'Subtitle1'
+
+							MDLabel:
+								id: lb_dash_pendaftaran
+								halign: "center"
+								valign: "middle"
+								font_style: 'H4'
+								text: "0"
+
+						MDBoxLayout:
+							orientation: "vertical"
+							MDLabel:
+								text: "BELUM UJI"
+								halign: "center"
+								valign: "middle"
+								font_style: 'Subtitle1'
+
+							MDLabel:
+								id: lb_dash_belum_uji
+								halign: "center"
+								valign: "middle"
+								font_style: 'H4'
+								text: "0"
+							
+						MDBoxLayout:
+							orientation: "vertical"
+							MDLabel:
+								text: "SUDAH UJI"
+								halign: "center"
+								valign: "middle"
+								font_style: 'Subtitle1'
+
+							MDLabel:
+								id: lb_dash_sudah_uji
+								halign: "center"
+								valign: "middle"
+								font_style: 'H4'
+								text: "0"
 
 					MDBoxLayout:
 						orientation: "horizontal"
-						MDLabel:
-							text: "No. Reg"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						size_hint_y: 0.05
+						spacing: 50
 
-						MDLabel:
-							id: lb_no_reg
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+						MDRectangleFlatIconButton:
+							icon: "reload"
+							text: "RELOAD TABLE"
+							theme_text_color: "Custom"
+							text_color: "#EEEEEE"
+							md_bg_color: "#4471C4"
+							size_hint_x: 0.3
+							on_press: root.exec_reload_table()
 
+						MDRectangleFlatIconButton:
+							id: bt_logout
+							icon: "logout"
+							text: "LOGOUT"
+							theme_text_color: "Custom"
+							text_color: "#EEEEEE"
+							md_bg_color: "#FF2A2A"
+							size_hint_x: 0.3
+							on_press: root.exec_logout()
+														
 					MDBoxLayout:
 						orientation: "horizontal"
+						md_bg_color: "#FFFFFF"
+						size_hint_y: 0.05
+						padding: 20
+
+						MDLabel:
+							text: "Antrian"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.05
+
+						MDLabel:
+							text: "No. Pol"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
+
 						MDLabel:
 							text: "No. Uji"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
 
 						MDLabel:
-							id: lb_no_uji
+							text: "Status Uji"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
 
-
-					MDBoxLayout:
-						orientation: "horizontal"
 						MDLabel:
 							text: "Nama"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.12
 
 						MDLabel:
-							id: lb_nama
+							text: "Merk"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
-
-					MDBoxLayout:
-						orientation: "horizontal"
-						MDLabel:
-							text: "Jenis Kendaraan"
-							halign: "left"
-							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
 
 						MDLabel:
-							id: lb_jenis_kendaraan
+							text: "Type"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.05
 
-					MDBoxLayout:
-						orientation: "horizontal"
 						MDLabel:
-							id: lb_status
+							text: "Jenis"
 							halign: "left"
 							valign: "middle"
-							font_style: 'H6'
+							font_style: 'Subtitle1'
+							size_hint_x: 0.15
 
-					MDRectangleFlatIconButton:
-						id: bt_start
-						icon: "play"
-						text: "MULAI TEST"
-						halign: "center"
-						theme_text_color: "Custom"
-						text_color: "#EEEEEE"
-						md_bg_color: "#19A56B"		
-						size_hint_x: 1					
-						disabled: True
-						on_press: root.exec_start()
+						MDLabel:
+							text: "JBB"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.05
+
+						MDLabel:
+							text: "Bahan Bakar"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
+
+						MDLabel:
+							text: "Warna"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.08
+
+					MDScrollView:
+						id: layout_scroll
+						size_hint_y: 0.75
+						scroll_timeout:100
+						MDList:
+							id: layout_list
 
 		# footer layout
         MDBoxLayout:
@@ -243,12 +317,12 @@
 				size_hint_x: 0.4
 				
 				Image:
-					source:'assets/logo-sorong.png'
+					source:'assets/images/logo-sorong.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 
 				Image:
-					source:'assets/logo-dishub.png'
+					source:'assets/images/logo-dishub.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 

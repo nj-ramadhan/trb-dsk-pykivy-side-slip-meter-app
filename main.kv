@@ -1,14 +1,20 @@
 #:kivy 2.1.0
 
 #:import NoTransition kivy.uix.screenmanager.NoTransition
+#:include screen_home.kv
 #:include screen_login.kv
 #:include screen_main.kv
-#:include screen_counter.kv
+#:include screen_slide_test.kv
 
 # ScreenManager:
 <RootScreen>:
     id: screen_manager
     transition: NoTransition()
+
+    ScreenHome:
+        id: screen_home
+        name: 'screen_home'
+        screen_manager: screen_manager
 
     ScreenLogin:
         id: screen_login
@@ -18,10 +24,10 @@
     ScreenMain:
         id: screen_main
         name: 'screen_main'
-        screen_manager: screen_manager
+        screen_manager: screen_manager 
 
-    ScreenCounter:
-        id: screen_counter
-        name: 'screen_counter'
+    ScreenSlideTest:
+        id: screen_slide_test
+        name: 'screen_slide_test'
         screen_manager: screen_manager   
 
