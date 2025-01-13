@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VIIMS - Side Slip Meter Application"
-#define MyAppVersion "1.4"
+#define MyAppVersion "1.5"
 #define MyAppPublisher "PT. Tiga Ratu Berkarya"
 #define MyAppExeName "TRB-VIIMS-SideSlipMeterApp.exe"
 #define MyAppAssocName "VIIMS - Side Slip Meter Application Files"

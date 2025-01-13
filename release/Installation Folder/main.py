@@ -50,7 +50,7 @@ SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
 MODBUS_IP_PLC = config['setting']['MODBUS_IP_PLC']
 
 COUNT_STARTING = 3
-COUNT_ACQUISITION = 4
+COUNT_ACQUISITION = 5
 TIME_OUT = 500
 
 dt_side_slip_value = 0
@@ -301,7 +301,7 @@ class ScreenMain(MDScreen):
             if(count_starting <= 0):
                 screen_sideslip_meter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
                 screen_sideslip_meter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
-                if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
+                if((dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP) and (dt_side_slip_value >= -STANDARD_MAX_SIDE_SLIP)):
                     screen_sideslip_meter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
                 else:
                     screen_sideslip_meter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Diluar Ambang Batas"
@@ -314,7 +314,7 @@ class ScreenMain(MDScreen):
 
             if(count_get_data <= 0):
                 if(not flag_play):
-                    if(dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP):
+                    if((dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP) and (dt_side_slip_value >= -STANDARD_MAX_SIDE_SLIP)):
                         screen_sideslip_meter.ids.lb_test_result.md_bg_color = colors['Green']['200']
                         screen_sideslip_meter.ids.lb_test_result.text = "LULUS"
                         dt_side_slip_flag = "Lulus"
@@ -370,7 +370,7 @@ class ScreenMain(MDScreen):
 
             if flag_conn_stat:
                 modbus_client.connect()
-                side_slip_registers = modbus_client.read_holding_registers(1612, 1, slave=1) #V1100
+                side_slip_registers = modbus_client.read_holding_registers(1612, count=1) #V1100
                 modbus_client.close()
 
                 dt_side_slip_value = (side_slip_registers.registers[0] / 10) - (SENSOR_LENGTH / 2)
