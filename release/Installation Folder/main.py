@@ -239,7 +239,7 @@ class ScreenMain(MDScreen):
             dt_no_antrian           = f"{db_antrian[0, row]}"
             dt_no_pol               = f"{db_antrian[1, row]}"
             dt_no_uji               = f"{db_antrian[2, row]}"
-            dt_side_slip_flag       = 'Belum Tes' if (int(db_antrian[3, row]) == 0) else 'Sudah Tes'
+            dt_side_slip_flag       = 'Lulus' if (int(db_antrian[3, row]) == 2) else 'Tidak Lulus' if (int(db_antrian[3, row]) == 1) else 'Belum Tes'
             dt_nama                 = f"{db_antrian[4, row]}"
             dt_merk                 = f"{db_merk[np.where(db_merk == db_antrian[5, row])[0][0],1]}"
             dt_type                 = f"{db_antrian[6, row]}"
@@ -440,7 +440,7 @@ class ScreenMain(MDScreen):
                         MDLabel(text=f"{db_antrian[0, i]}", size_hint_x= 0.05),
                         MDLabel(text=f"{db_antrian[1, i]}", size_hint_x= 0.08),
                         MDLabel(text=f"{db_antrian[2, i]}", size_hint_x= 0.08),
-                        MDLabel(text='Belum Tes' if (int(db_antrian[3, i]) == 0) else 'Sudah Tes', size_hint_x= 0.08),
+                        MDLabel(text='Lulus' if (int(db_antrian[3, i]) == 2) else 'Tidak Lulus' if (int(db_antrian[3, i]) == 1) else 'Belum Tes', size_hint_x= 0.08),
                         MDLabel(text=f"{db_antrian[4, i]}", size_hint_x= 0.12),
                         MDLabel(text=f"{db_merk[np.where(db_merk == db_antrian[5, i])[0][0],1]}", size_hint_x= 0.08),
                         MDLabel(text=f"{db_antrian[6, i]}", size_hint_x= 0.05),
@@ -600,7 +600,7 @@ class SoundLevelMeterApp(MDApp):
         self.theme_cls.primary_palette = "Gray"
         self.theme_cls.accent_palette = "Blue"
         self.theme_cls.theme_style = "Light"
-        self.icon = 'assets/images/logo-app.png'
+        self.icon = 'assets/images/logo-sideslip-app.png'
 
         LabelBase.register(
             name="Orbitron-Regular",
@@ -647,10 +647,6 @@ class SoundLevelMeterApp(MDApp):
             "Recharge", 8, False, 0.15]                                 
             
         Window.fullscreen = 'auto'
-        # Window.borderless = False
-        # Window.size = 1920, 1080
-        # Window.allow_screensaver = True
-
         Builder.load_file('main.kv')
         return RootScreen()
 
