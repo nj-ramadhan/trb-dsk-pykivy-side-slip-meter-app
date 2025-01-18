@@ -95,10 +95,6 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_kivy.py',
    'PYSOURCE'),
-  ('pyi_rth_gstreamer',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_gstreamer.py',
-   'PYSOURCE'),
   ('pyi_rth_pkgres',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
@@ -106,6 +102,10 @@
   ('pyi_rth_setuptools',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
+   'PYSOURCE'),
+  ('pyi_rth_gstreamer',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_gstreamer.py',
    'PYSOURCE'),
   ('main',
    'D:\\PRJ\\TRB - Vehicle Inspection Integration Management '
@@ -268,33 +268,45 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp39-win_amd64.pyd',
    'EXTENSION'),
+  ('kivy\\graphics\\vbo.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vbo.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\gl_instructions.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\gl_instructions.cp39-win_amd64.pyd',
+   'EXTENSION'),
   ('kivy\\_metrics.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\_metrics.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\cgl_backend\\cgl_glew.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\stencil_instructions.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_glew.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\stencil_instructions.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\_event.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\_event.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\cgl_backend\\cgl_mock.cp39-win_amd64.pyd',
+  ('cv2\\cv2.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_mock.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\cv2\\cv2.pyd',
    'EXTENSION'),
-  ('kivy\\lib\\gstplayer\\_gstplayer.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\shader.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\lib\\gstplayer\\_gstplayer.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\cgl_backend\\cgl_gl.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_gl.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\shader.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\graphics\\boxshadow.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\boxshadow.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\compiler.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\compiler.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\fbo.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\fbo.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_webp.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
@@ -320,141 +332,129 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\PIL\\_imagingft.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('_elementtree.pyd',
+  ('kivy\\graphics\\context_instructions.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\DLLs\\_elementtree.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\opengl.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\opengl.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('cv2\\cv2.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\cv2\\cv2.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\window\\window_info.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\window\\window_info.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\tesselator.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\tesselator.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\text\\text_layout.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\text\\text_layout.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\gl_instructions.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\gl_instructions.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\clipboard\\_clipboard_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\clipboard\\_clipboard_sdl2.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\image\\_img_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\image\\_img_sdl2.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\context_instructions.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\graphics\\buffer.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\buffer.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\context.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\cgl.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\context.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\vertex.cp39-win_amd64.pyd',
+  ('kivy\\lib\\gstplayer\\_gstplayer.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vertex.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\shader.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\shader.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\cgl_backend\\cgl_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_sdl2.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\context_instructions.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\context_instructions.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\transformation.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\transformation.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\text\\_text_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\text\\_text_sdl2.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\lib\\gstplayer\\_gstplayer.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\graphics\\scissor_instructions.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\scissor_instructions.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\fbo.cp39-win_amd64.pyd',
+  ('_elementtree.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\fbo.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\DLLs\\_elementtree.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\cgl.cp39-win_amd64.pyd',
+  ('kivy\\core\\clipboard\\_clipboard_sdl2.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\clipboard\\_clipboard_sdl2.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\compiler.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\context.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\compiler.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\context.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\vertex_instructions.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\transformation.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vertex_instructions.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\transformation.cp39-win_amd64.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\svg.cp39-win_amd64.pyd',
+  ('kivy\\graphics\\opengl.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\svg.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\stencil_instructions.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\stencil_instructions.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\window\\_window_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\window\\_window_sdl2.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\core\\audio\\audio_sdl2.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\audio\\audio_sdl2.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('win32\\win32file.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\win32\\win32file.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\instructions.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\instructions.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\graphics\\opengl_utils.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\opengl_utils.cp39-win_amd64.pyd',
-   'EXTENSION'),
-  ('kivy\\weakproxy.cp39-win_amd64.pyd',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\weakproxy.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\opengl.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\graphics\\texture.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\texture.cp39-win_amd64.pyd',
    'EXTENSION'),
+  ('kivy\\graphics\\cgl_backend\\cgl_mock.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_mock.cp39-win_amd64.pyd',
+   'EXTENSION'),
   ('kivy\\graphics\\cgl_backend\\cgl_debug.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_debug.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\opengl_utils.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\opengl_utils.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\cgl_backend\\cgl_gl.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_gl.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\text\\text_layout.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\text\\text_layout.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\tesselator.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\tesselator.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('win32\\win32file.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\win32\\win32file.pyd',
    'EXTENSION'),
   ('win32\\win32gui.pyd',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\win32\\win32gui.pyd',
    'EXTENSION'),
-  ('kivy\\graphics\\vbo.cp39-win_amd64.pyd',
+  ('kivy\\weakproxy.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vbo.cp39-win_amd64.pyd',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\weakproxy.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\audio\\audio_sdl2.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\audio\\audio_sdl2.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\cgl_backend\\cgl_glew.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_glew.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\window\\_window_sdl2.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\window\\_window_sdl2.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\image\\_img_sdl2.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\image\\_img_sdl2.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\instructions.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\instructions.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\text\\_text_sdl2.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\text\\_text_sdl2.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\vertex.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vertex.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\svg.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\svg.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\cgl_backend\\cgl_sdl2.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\cgl_backend\\cgl_sdl2.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\core\\window\\window_info.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\core\\window\\window_info.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('kivy\\graphics\\vertex_instructions.cp39-win_amd64.pyd',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\graphics\\vertex_instructions.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('kivy\\properties.cp39-win_amd64.pyd',
    'C:\\Users\\Nur '
@@ -472,13 +472,13 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\VCRUNTIME140_1.dll',
    'BINARY'),
-  ('libcrypto-1_1.dll',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\DLLs\\libcrypto-1_1.dll',
-   'BINARY'),
   ('libssl-1_1.dll',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('libcrypto-1_1.dll',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\DLLs\\libcrypto-1_1.dll',
    'BINARY'),
   ('libffi-7.dll',
    'C:\\Users\\Nur '
@@ -492,13 +492,17 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\python3.dll',
    'BINARY'),
+  ('SDL2.dll',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\sdl2\\bin\\SDL2.dll',
+   'BINARY'),
   ('glew32.dll',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\glew\\bin\\glew32.dll',
    'BINARY'),
-  ('SDL2.dll',
+  ('SDL2_mixer.dll',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\sdl2\\bin\\SDL2.dll',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\sdl2\\bin\\SDL2_mixer.dll',
    'BINARY'),
   ('SDL2_image.dll',
    'C:\\Users\\Nur '
@@ -508,19 +512,15 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\sdl2\\bin\\SDL2_ttf.dll',
    'BINARY'),
-  ('SDL2_mixer.dll',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\share\\sdl2\\bin\\SDL2_mixer.dll',
-   'BINARY'),
-  ('MSVCP140.dll', 'C:\\Windows\\System32\\MSVCP140.dll', 'BINARY'),
-  ('libcrypto-3-x64.dll',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\libcrypto-3-x64.dll',
-   'BINARY'),
   ('libssl-3-x64.dll',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\libssl-3-x64.dll',
    'BINARY'),
+  ('libcrypto-3-x64.dll',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\libcrypto-3-x64.dll',
+   'BINARY'),
+  ('MSVCP140.dll', 'C:\\Windows\\System32\\MSVCP140.dll', 'BINARY'),
   ('config.ini',
    'D:\\PRJ\\TRB - Vehicle Inspection Integration Management '
    'System\\trb-dsk-pykivy-side-slip-meter-app\\release\\Installation '
@@ -626,121 +626,117 @@
    'System\\trb-dsk-pykivy-side-slip-meter-app\\release\\Installation '
    'Folder\\build\\main\\base_library.zip',
    'DATA'),
-  ('kivymd\\uix\\sliverappbar\\sliverappbar.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\sliverappbar\\sliverappbar.kv',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-BoldItalic.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-BoldItalic.ttf',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-MediumItalic.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-MediumItalic.ttf',
-   'DATA'),
   ('kivymd\\uix\\pickers\\colorpicker\\colorpicker.kv',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\pickers\\colorpicker\\colorpicker.kv',
-   'DATA'),
-  ('kivymd\\uix\\dropdownitem\\dropdownitem.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\dropdownitem\\dropdownitem.kv',
-   'DATA'),
-  ('kivymd\\images\\alpha_layer.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\alpha_layer.png',
-   'DATA'),
-  ('kivymd\\uix\\spinner\\spinner.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\spinner\\spinner.kv',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-LightItalic.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-LightItalic.ttf',
-   'DATA'),
-  ('kivymd\\uix\\segmentedbutton\\segmentedbutton.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\segmentedbutton\\segmentedbutton.kv',
-   'DATA'),
-  ('kivymd\\uix\\card\\card.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\card\\card.kv',
-   'DATA'),
-  ('kivymd\\uix\\selection\\selection.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\selection\\selection.kv',
-   'DATA'),
-  ('kivymd\\uix\\navigationdrawer\\navigationdrawer.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\navigationdrawer\\navigationdrawer.kv',
-   'DATA'),
-  ('kivymd\\images\\logo\\kivymd-icon-128.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-128.png',
-   'DATA'),
-  ('kivymd\\uix\\bottomsheet\\bottomsheet.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\bottomsheet\\bottomsheet.kv',
-   'DATA'),
-  ('kivymd\\uix\\expansionpanel\\expansionpanel.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\expansionpanel\\expansionpanel.kv',
-   'DATA'),
-  ('kivymd\\uix\\banner\\banner.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\banner\\banner.kv',
-   'DATA'),
-  ('kivymd\\uix\\refreshlayout\\refreshlayout.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\refreshlayout\\refreshlayout.kv',
-   'DATA'),
-  ('kivymd\\uix\\selectioncontrol\\selectioncontrol.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\selectioncontrol\\selectioncontrol.kv',
-   'DATA'),
-  ('kivymd\\uix\\datatables\\datatables.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\datatables\\datatables.kv',
-   'DATA'),
-  ('kivymd\\images\\green.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\green.png',
-   'DATA'),
-  ('kivymd\\uix\\imagelist\\imagelist.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\imagelist\\imagelist.kv',
    'DATA'),
   ('kivymd\\fonts\\Roboto-Bold.ttf',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Bold.ttf',
    'DATA'),
-  ('kivymd\\fonts\\Roboto-Black.ttf',
+  ('kivymd\\uix\\card\\card.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Black.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\card\\card.kv',
    'DATA'),
-  ('kivymd\\uix\\filemanager\\filemanager.kv',
+  ('kivymd\\uix\\chip\\chip.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\filemanager\\filemanager.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\chip\\chip.kv',
    'DATA'),
-  ('kivymd\\uix\\segmentedcontrol\\segmentedcontrol.kv',
+  ('kivymd\\uix\\imagelist\\imagelist.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\segmentedcontrol\\segmentedcontrol.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\imagelist\\imagelist.kv',
+   'DATA'),
+  ('kivymd\\fonts\\Roboto-ThinItalic.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-ThinItalic.ttf',
+   'DATA'),
+  ('kivymd\\uix\\pickers\\timepicker\\timepicker.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\pickers\\timepicker\\timepicker.kv',
+   'DATA'),
+  ('kivymd\\uix\\tab\\tab.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\tab\\tab.kv',
+   'DATA'),
+  ('kivymd\\fonts\\materialdesignicons-webfont.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\materialdesignicons-webfont.ttf',
+   'DATA'),
+  ('kivymd\\images\\logo\\kivymd-icon-256.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-256.png',
+   'DATA'),
+  ('kivymd\\uix\\expansionpanel\\expansionpanel.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\expansionpanel\\expansionpanel.kv',
+   'DATA'),
+  ('kivymd\\images\\red.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\red.png',
+   'DATA'),
+  ('kivymd\\uix\\selection\\selection.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\selection\\selection.kv',
+   'DATA'),
+  ('kivymd\\images\\green.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\green.png',
+   'DATA'),
+  ('kivymd\\images\\yellow.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\yellow.png',
+   'DATA'),
+  ('kivymd\\uix\\label\\label.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\label\\label.kv',
+   'DATA'),
+  ('kivymd\\images\\blue.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\blue.png',
+   'DATA'),
+  ('kivymd\\uix\\dialog\\dialog.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\dialog\\dialog.kv',
+   'DATA'),
+  ('kivymd\\uix\\selectioncontrol\\selectioncontrol.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\selectioncontrol\\selectioncontrol.kv',
    'DATA'),
   ('kivymd\\uix\\swiper\\swiper.kv',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\swiper\\swiper.kv',
    'DATA'),
-  ('kivymd\\uix\\tooltip\\tooltip.kv',
+  ('kivymd\\uix\\navigationrail\\navigationrail.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\tooltip\\tooltip.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\navigationrail\\navigationrail.kv',
    'DATA'),
-  ('kivymd\\uix\\slider\\slider.kv',
+  ('kivymd\\uix\\snackbar\\snackbar.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\slider\\slider.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\snackbar\\snackbar.kv',
    'DATA'),
-  ('kivymd\\fonts\\Roboto-Italic.ttf',
+  ('kivymd\\fonts\\Roboto-MediumItalic.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Italic.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-MediumItalic.ttf',
+   'DATA'),
+  ('kivymd\\fonts\\Roboto-Thin.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Thin.ttf',
+   'DATA'),
+  ('kivymd\\uix\\backdrop\\backdrop.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\backdrop\\backdrop.kv',
+   'DATA'),
+  ('kivymd\\uix\\segmentedbutton\\segmentedbutton.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\segmentedbutton\\segmentedbutton.kv',
+   'DATA'),
+  ('kivymd\\uix\\menu\\menu.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\menu\\menu.kv',
+   'DATA'),
+  ('kivymd\\uix\\bottomnavigation\\bottomnavigation.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\bottomnavigation\\bottomnavigation.kv',
    'DATA'),
   ('kivymd\\uix\\toolbar\\toolbar.kv',
    'C:\\Users\\Nur '
@@ -750,694 +746,377 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Light.ttf',
    'DATA'),
-  ('kivymd\\fonts\\Roboto-BlackItalic.ttf',
+  ('kivymd\\fonts\\Roboto-Regular.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-BlackItalic.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Regular.ttf',
    'DATA'),
-  ('kivymd\\uix\\tab\\tab.kv',
+  ('kivymd\\uix\\refreshlayout\\refreshlayout.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\tab\\tab.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\refreshlayout\\refreshlayout.kv',
    'DATA'),
-  ('kivymd\\uix\\textfield\\textfield.kv',
+  ('kivymd\\images\\alpha_layer.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\textfield\\textfield.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\alpha_layer.png',
    'DATA'),
-  ('kivymd\\fonts\\materialdesignicons-webfont.ttf',
+  ('kivymd\\uix\\slider\\slider.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\materialdesignicons-webfont.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\slider\\slider.kv',
    'DATA'),
-  ('kivymd\\images\\black.png',
+  ('kivymd\\fonts\\Roboto-BoldItalic.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\black.png',
-   'DATA'),
-  ('kivymd\\uix\\bottomnavigation\\bottomnavigation.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\bottomnavigation\\bottomnavigation.kv',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-ThinItalic.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-ThinItalic.ttf',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-Medium.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Medium.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-BoldItalic.ttf',
    'DATA'),
   ('kivymd\\uix\\pickers\\datepicker\\datepicker.kv',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\pickers\\datepicker\\datepicker.kv',
    'DATA'),
-  ('kivymd\\images\\folder.png',
+  ('kivymd\\uix\\tooltip\\tooltip.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\folder.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\tooltip\\tooltip.kv',
    'DATA'),
-  ('kivymd\\images\\yellow.png',
+  ('kivymd\\uix\\dropdownitem\\dropdownitem.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\yellow.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\dropdownitem\\dropdownitem.kv',
    'DATA'),
-  ('kivymd\\uix\\backdrop\\backdrop.kv',
+  ('kivymd\\uix\\banner\\banner.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\backdrop\\backdrop.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\banner\\banner.kv',
    'DATA'),
-  ('kivymd\\images\\red.png',
+  ('kivymd\\uix\\sliverappbar\\sliverappbar.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\red.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\sliverappbar\\sliverappbar.kv',
    'DATA'),
-  ('kivymd\\images\\blue.png',
+  ('kivymd\\uix\\filemanager\\filemanager.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\blue.png',
-   'DATA'),
-  ('kivymd\\uix\\navigationrail\\navigationrail.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\navigationrail\\navigationrail.kv',
-   'DATA'),
-  ('kivymd\\images\\logo\\kivymd-icon-512.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-512.png',
-   'DATA'),
-  ('kivymd\\uix\\dialog\\dialog.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\dialog\\dialog.kv',
-   'DATA'),
-  ('kivymd\\images\\logo\\kivymd-icon-256.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-256.png',
-   'DATA'),
-  ('kivymd\\fonts\\Roboto-Regular.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Regular.ttf',
-   'DATA'),
-  ('kivymd\\uix\\pickers\\timepicker\\timepicker.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\pickers\\timepicker\\timepicker.kv',
-   'DATA'),
-  ('kivymd\\uix\\button\\button.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\button\\button.kv',
-   'DATA'),
-  ('kivymd\\uix\\snackbar\\snackbar.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\snackbar\\snackbar.kv',
-   'DATA'),
-  ('kivymd\\images\\transparent.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\transparent.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\filemanager\\filemanager.kv',
    'DATA'),
   ('kivymd\\uix\\progressbar\\progressbar.kv',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\progressbar\\progressbar.kv',
    'DATA'),
+  ('kivymd\\uix\\datatables\\datatables.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\datatables\\datatables.kv',
+   'DATA'),
+  ('kivymd\\images\\logo\\kivymd-icon-128.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-128.png',
+   'DATA'),
+  ('kivymd\\images\\folder.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\folder.png',
+   'DATA'),
+  ('kivymd\\images\\logo\\kivymd-icon-512.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\logo\\kivymd-icon-512.png',
+   'DATA'),
+  ('kivymd\\fonts\\Roboto-BlackItalic.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-BlackItalic.ttf',
+   'DATA'),
+  ('kivymd\\fonts\\Roboto-LightItalic.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-LightItalic.ttf',
+   'DATA'),
+  ('kivymd\\fonts\\Roboto-Medium.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Medium.ttf',
+   'DATA'),
+  ('kivymd\\uix\\bottomsheet\\bottomsheet.kv',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\bottomsheet\\bottomsheet.kv',
+   'DATA'),
   ('kivymd\\uix\\list\\list.kv',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\list\\list.kv',
    'DATA'),
-  ('kivymd\\uix\\chip\\chip.kv',
+  ('kivymd\\fonts\\Roboto-Italic.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\chip\\chip.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Italic.ttf',
    'DATA'),
-  ('kivymd\\fonts\\Roboto-Thin.ttf',
+  ('kivymd\\images\\transparent.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Thin.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\transparent.png',
    'DATA'),
-  ('kivymd\\uix\\menu\\menu.kv',
+  ('kivymd\\uix\\segmentedcontrol\\segmentedcontrol.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\menu\\menu.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\segmentedcontrol\\segmentedcontrol.kv',
    'DATA'),
-  ('kivymd\\uix\\label\\label.kv',
+  ('kivymd\\images\\black.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\label\\label.kv',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\images\\black.png',
    'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-32.png',
+  ('kivymd\\uix\\textfield\\textfield.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-32.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\textfield\\textfield.kv',
    'DATA'),
-  ('kivy_install\\modules\\__pycache__\\inspector.cpython-39.pyc',
+  ('kivymd\\uix\\navigationdrawer\\navigationdrawer.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\inspector.cpython-39.pyc',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\navigationdrawer\\navigationdrawer.kv',
    'DATA'),
-  ('kivy_install\\modules\\__pycache__\\screen.cpython-39.pyc',
+  ('kivymd\\fonts\\Roboto-Black.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\screen.cpython-39.pyc',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\fonts\\Roboto-Black.ttf',
    'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-16.png',
+  ('kivymd\\uix\\button\\button.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-16.png',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\button\\button.kv',
    'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-64.ico',
+  ('kivymd\\uix\\spinner\\spinner.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-64.ico',
-   'DATA'),
-  ('kivy_install\\data\\images\\image-loading.zip',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\image-loading.zip',
-   'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-256.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-256.png',
-   'DATA'),
-  ('kivy_install\\data\\fonts\\Roboto-Italic.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Italic.ttf',
-   'DATA'),
-  ('kivy_install\\data\\glsl\\default.vs',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.vs',
-   'DATA'),
-  ('kivy_install\\data\\images\\image-loading.gif',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\image-loading.gif',
-   'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-128.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-128.png',
-   'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-24.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-24.png',
-   'DATA'),
-  ('kivy_install\\modules\\__init__.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__init__.py',
-   'DATA'),
-  ('kivy_install\\modules\\monitor.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\monitor.py',
-   'DATA'),
-  ('kivy_install\\data\\images\\defaulttheme.atlas',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaulttheme.atlas',
-   'DATA'),
-  ('kivy_install\\data\\glsl\\default.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.png',
-   'DATA'),
-  ('kivy_install\\data\\fonts\\Roboto-Regular.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Regular.ttf',
-   'DATA'),
-  ('kivy_install\\data\\keyboards\\qwerty.json',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\qwerty.json',
-   'DATA'),
-  ('kivy_install\\modules\\showborder.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\showborder.py',
-   'DATA'),
-  ('kivy_install\\modules\\touchring.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\touchring.py',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\showborder.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\showborder.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\data\\style.kv',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\style.kv',
-   'DATA'),
-  ('kivy_install\\data\\images\\defaulttheme-0.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaulttheme-0.png',
-   'DATA'),
-  ('kivy_install\\modules\\webdebugger.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\webdebugger.py',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\__init__.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\__init__.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-64.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-64.png',
-   'DATA'),
-  ('kivy_install\\data\\images\\defaultshape.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaultshape.png',
-   'DATA'),
-  ('kivy_install\\data\\glsl\\header.vs',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\header.vs',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\keybinding.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\keybinding.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\monitor.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\monitor.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\data\\images\\testpattern.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\testpattern.png',
-   'DATA'),
-  ('kivy_install\\modules\\console.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\console.py',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\recorder.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\recorder.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\data\\settings_kivy.json',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\settings_kivy.json',
-   'DATA'),
-  ('kivy_install\\data\\fonts\\RobotoMono-Regular.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\RobotoMono-Regular.ttf',
-   'DATA'),
-  ('kivy_install\\modules\\cursor.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\cursor.py',
-   'DATA'),
-  ('kivy_install\\data\\fonts\\DejaVuSans.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\DejaVuSans.ttf',
-   'DATA'),
-  ('kivy_install\\data\\fonts\\Roboto-Bold.ttf',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Bold.ttf',
-   'DATA'),
-  ('kivy_install\\data\\glsl\\header.fs',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\header.fs',
-   'DATA'),
-  ('kivy_install\\modules\\joycursor.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\joycursor.py',
-   'DATA'),
-  ('kivy_install\\modules\\screen.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\screen.py',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivymd\\uix\\spinner\\spinner.kv',
    'DATA'),
   ('kivy_install\\modules\\__pycache__\\console.cpython-39.pyc',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\console.cpython-39.pyc',
    'DATA'),
-  ('kivy_install\\modules\\__pycache__\\touchring.cpython-39.pyc',
+  ('kivy_install\\data\\logo\\kivy-icon-64.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\touchring.cpython-39.pyc',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-64.png',
    'DATA'),
-  ('kivy_install\\data\\keyboards\\fr_CH.json',
+  ('kivy_install\\data\\logo\\kivy-icon-64.ico',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\fr_CH.json',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-64.ico',
    'DATA'),
-  ('kivy_install\\modules\\__pycache__\\_webdebugger.cpython-39.pyc',
+  ('kivy_install\\data\\fonts\\DejaVuSans.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\_webdebugger.cpython-39.pyc',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\DejaVuSans.ttf',
    'DATA'),
-  ('kivy_install\\data\\keyboards\\azerty.json',
+  ('kivy_install\\data\\logo\\kivy-icon-128.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\azerty.json',
-   'DATA'),
-  ('kivy_install\\modules\\__pycache__\\cursor.cpython-39.pyc',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\cursor.cpython-39.pyc',
-   'DATA'),
-  ('kivy_install\\data\\glsl\\default.fs',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.fs',
-   'DATA'),
-  ('kivy_install\\data\\keyboards\\en_US.json',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\en_US.json',
-   'DATA'),
-  ('kivy_install\\data\\images\\background.jpg',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\background.jpg',
-   'DATA'),
-  ('kivy_install\\data\\images\\cursor.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\cursor.png',
-   'DATA'),
-  ('kivy_install\\data\\logo\\kivy-icon-512.png',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-512.png',
-   'DATA'),
-  ('kivy_install\\modules\\inspector.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\inspector.py',
-   'DATA'),
-  ('kivy_install\\data\\keyboards\\de_CH.json',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\de_CH.json',
-   'DATA'),
-  ('kivy_install\\modules\\_webdebugger.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\_webdebugger.py',
-   'DATA'),
-  ('kivy_install\\modules\\keybinding.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\keybinding.py',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-128.png',
    'DATA'),
   ('kivy_install\\modules\\__pycache__\\webdebugger.cpython-39.pyc',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\webdebugger.cpython-39.pyc',
    'DATA'),
-  ('kivy_install\\modules\\recorder.py',
+  ('kivy_install\\data\\style.kv',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\recorder.py',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\style.kv',
    'DATA'),
-  ('kivy_install\\data\\fonts\\Roboto-BoldItalic.ttf',
+  ('kivy_install\\data\\glsl\\default.vs',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-BoldItalic.ttf',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.vs',
    'DATA'),
-  ('kivy_install\\data\\keyboards\\de.json',
+  ('kivy_install\\modules\\showborder.py',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\de.json',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\showborder.py',
    'DATA'),
   ('kivy_install\\data\\keyboards\\qwertz.json',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\qwertz.json',
    'DATA'),
-  ('kivy_install\\modules\\__pycache__\\joycursor.cpython-39.pyc',
+  ('kivy_install\\data\\fonts\\RobotoMono-Regular.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\joycursor.cpython-39.pyc',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\RobotoMono-Regular.ttf',
+   'DATA'),
+  ('kivy_install\\data\\glsl\\header.fs',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\header.fs',
+   'DATA'),
+  ('kivy_install\\data\\logo\\kivy-icon-32.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-32.png',
+   'DATA'),
+  ('kivy_install\\modules\\inspector.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\inspector.py',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\__init__.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\__init__.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\settings_kivy.json',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\settings_kivy.json',
+   'DATA'),
+  ('kivy_install\\data\\glsl\\default.fs',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.fs',
+   'DATA'),
+  ('kivy_install\\modules\\keybinding.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\keybinding.py',
+   'DATA'),
+  ('kivy_install\\data\\images\\cursor.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\cursor.png',
+   'DATA'),
+  ('kivy_install\\modules\\joycursor.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\joycursor.py',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\keybinding.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\keybinding.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\recorder.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\recorder.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\images\\defaulttheme.atlas',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaulttheme.atlas',
+   'DATA'),
+  ('kivy_install\\data\\logo\\kivy-icon-16.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-16.png',
+   'DATA'),
+  ('kivy_install\\data\\images\\image-loading.gif',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\image-loading.gif',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\screen.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\screen.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\keyboards\\azerty.json',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\azerty.json',
+   'DATA'),
+  ('kivy_install\\data\\images\\testpattern.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\testpattern.png',
+   'DATA'),
+  ('kivy_install\\data\\images\\defaultshape.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaultshape.png',
+   'DATA'),
+  ('kivy_install\\data\\fonts\\Roboto-Regular.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Regular.ttf',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\touchring.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\touchring.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\fonts\\Roboto-Italic.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Italic.ttf',
+   'DATA'),
+  ('kivy_install\\modules\\__init__.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__init__.py',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\cursor.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\cursor.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\modules\\cursor.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\cursor.py',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\_webdebugger.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\_webdebugger.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\images\\background.jpg',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\background.jpg',
+   'DATA'),
+  ('kivy_install\\data\\keyboards\\fr_CH.json',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\fr_CH.json',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\showborder.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\showborder.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\inspector.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\inspector.cpython-39.pyc',
+   'DATA'),
+  ('kivy_install\\data\\logo\\kivy-icon-24.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-24.png',
+   'DATA'),
+  ('kivy_install\\modules\\_webdebugger.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\_webdebugger.py',
+   'DATA'),
+  ('kivy_install\\data\\fonts\\Roboto-BoldItalic.ttf',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-BoldItalic.ttf',
+   'DATA'),
+  ('kivy_install\\modules\\screen.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\screen.py',
+   'DATA'),
+  ('kivy_install\\data\\keyboards\\de_CH.json',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\de_CH.json',
+   'DATA'),
+  ('kivy_install\\modules\\recorder.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\recorder.py',
+   'DATA'),
+  ('kivy_install\\data\\glsl\\default.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\default.png',
+   'DATA'),
+  ('kivy_install\\data\\images\\defaulttheme-0.png',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\defaulttheme-0.png',
+   'DATA'),
+  ('kivy_install\\data\\images\\image-loading.zip',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\images\\image-loading.zip',
+   'DATA'),
+  ('kivy_install\\modules\\monitor.py',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\monitor.py',
+   'DATA'),
+  ('kivy_install\\modules\\__pycache__\\monitor.cpython-39.pyc',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\monitor.cpython-39.pyc',
    'DATA'),
   ('kivy_install\\data\\logo\\kivy-icon-48.png',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-48.png',
    'DATA'),
-  ('docutils\\parsers\\rst\\include\\isolat1.txt',
+  ('kivy_install\\data\\glsl\\header.vs',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isolat1.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\glsl\\header.vs',
    'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomscr.txt',
+  ('kivy_install\\data\\keyboards\\qwerty.json',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomscr.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\qwerty.json',
    'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\small-white\\pretty.css',
+  ('kivy_install\\modules\\touchring.py',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-white\\pretty.css',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\touchring.py',
    'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomopf-wide.txt',
+  ('kivy_install\\modules\\webdebugger.py',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomopf-wide.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\webdebugger.py',
    'DATA'),
-  ('docutils\\parsers\\rst\\include\\isogrk3.txt',
+  ('kivy_install\\data\\logo\\kivy-icon-256.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk3.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-256.png',
    'DATA'),
-  ('docutils\\writers\\html5_polyglot\\plain.css',
+  ('kivy_install\\data\\logo\\kivy-icon-512.png',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\plain.css',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\logo\\kivy-icon-512.png',
    'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\README.txt',
+  ('kivy_install\\modules\\__pycache__\\joycursor.cpython-39.pyc',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\README.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\__pycache__\\joycursor.cpython-39.pyc',
    'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\big-white\\pretty.css',
+  ('kivy_install\\data\\keyboards\\en_US.json',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-white\\pretty.css',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\en_US.json',
    'DATA'),
-  ('docutils\\parsers\\rst\\include\\isonum.txt',
+  ('kivy_install\\modules\\console.py',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isonum.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\modules\\console.py',
    'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\small-black\\__base__',
+  ('kivy_install\\data\\fonts\\Roboto-Bold.ttf',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-black\\__base__',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\fonts\\Roboto-Bold.ttf',
    'DATA'),
-  ('docutils\\writers\\html5_polyglot\\minimal.css',
+  ('kivy_install\\data\\keyboards\\de.json',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\minimal.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isogrk4.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk4.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\xhtml1-lat1.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-lat1.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isogrk2.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk2.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\big-black\\__base__',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\__base__',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\xhtml1-special.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-special.txt',
-   'DATA'),
-  ('docutils\\writers\\latex2e\\titlepage.tex',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\titlepage.tex',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isogrk4-wide.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk4-wide.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isopub.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isopub.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomfrk.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomfrk.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isolat2.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isolat2.txt',
-   'DATA'),
-  ('docutils\\writers\\html5_polyglot\\responsive.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\responsive.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\opera.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\opera.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomfrk-wide.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomfrk-wide.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\small-black\\pretty.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-black\\pretty.css',
-   'DATA'),
-  ('docutils\\writers\\latex2e\\titlingpage.tex',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\titlingpage.tex',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\outline.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\outline.css',
-   'DATA'),
-  ('docutils\\writers\\html5_polyglot\\template.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\template.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\medium-white\\pretty.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-white\\pretty.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\slides.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\slides.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isogrk1.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk1.txt',
-   'DATA'),
-  ('docutils\\writers\\latex2e\\docutils.sty',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\docutils.sty',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\framing.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\framing.css',
-   'DATA'),
-  ('docutils\\writers\\html4css1\\html4css1.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html4css1\\html4css1.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\medium-white\\framing.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-white\\framing.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\medium-black\\pretty.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-black\\pretty.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\mmlextra-wide.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlextra-wide.txt',
-   'DATA'),
-  ('docutils\\writers\\pep_html\\pep.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\pep_html\\pep.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\big-black\\framing.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\framing.css',
-   'DATA'),
-  ('docutils\\writers\\odf_odt\\styles.odt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\odf_odt\\styles.odt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isocyr1.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isocyr1.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\pretty.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\pretty.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isotech.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isotech.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\xhtml1-symbol.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-symbol.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\medium-black\\__base__',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-black\\__base__',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\big-black\\pretty.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\pretty.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isodia.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isodia.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomopf.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomopf.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\s5defs.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\s5defs.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamsb.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsb.txt',
-   'DATA'),
-  ('docutils\\writers\\html4css1\\template.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html4css1\\template.txt',
-   'DATA'),
-  ('docutils\\writers\\pep_html\\template.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\pep_html\\template.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamsn.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsn.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isocyr2.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isocyr2.txt',
-   'DATA'),
-  ('docutils\\writers\\latex2e\\default.tex',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\default.tex',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isomscr-wide.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomscr-wide.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamsa.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsa.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\big-white\\framing.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-white\\framing.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isobox.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isobox.txt',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\small-white\\framing.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-white\\framing.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\s5-core.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\s5-core.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\print.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\print.css',
-   'DATA'),
-  ('docutils\\writers\\html5_polyglot\\math.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\math.css',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamso.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamso.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\README.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\README.txt',
-   'DATA'),
-  ('docutils\\writers\\latex2e\\xelatex.tex',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\xelatex.tex',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamsr.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsr.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\mmlalias.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlalias.txt',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\isoamsc.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsc.txt',
-   'DATA'),
-  ('docutils\\writers\\html5_polyglot\\tuftig.css',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\tuftig.css',
-   'DATA'),
-  ('docutils\\writers\\s5_html\\themes\\default\\slides.js',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\slides.js',
-   'DATA'),
-  ('docutils\\parsers\\rst\\include\\mmlextra.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlextra.txt',
-   'DATA'),
-  ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
-   'ipsum.txt',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\METADATA',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\METADATA',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\WHEEL',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\WHEEL',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\top_level.txt',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\top_level.txt',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\INSTALLER',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\INSTALLER',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\RECORD',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\RECORD',
-   'DATA'),
-  ('importlib_metadata-6.8.0.dist-info\\LICENSE',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\LICENSE',
-   'DATA'),
-  ('cv2\\config.py',
-   'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\cv2\\config.py',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\kivy\\data\\keyboards\\de.json',
    'DATA'),
   ('cv2\\config-3.py',
    'C:\\Users\\Nur '
@@ -1447,21 +1126,334 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\cv2\\load_config_py3.py',
    'DATA'),
-  ('certifi\\cacert.pem',
+  ('cv2\\config.py',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\certifi\\cacert.pem',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\cv2\\config.py',
    'DATA'),
   ('certifi\\py.typed',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\certifi\\py.typed',
    'DATA'),
-  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
+  ('certifi\\cacert.pem',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
-  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+  ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
+   'ipsum.txt',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\INSTALLER',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\METADATA',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\METADATA',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\LICENSE',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\LICENSE',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\RECORD',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\RECORD',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\top_level.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('importlib_metadata-6.8.0.dist-info\\WHEEL',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Roaming\\Python\\Python39\\site-packages\\importlib_metadata-6.8.0.dist-info\\WHEEL',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isogrk4.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk4.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\outline.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\outline.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isopub.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isopub.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isogrk2.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk2.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isogrk3.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk3.txt',
+   'DATA'),
+  ('docutils\\writers\\html4css1\\html4css1.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html4css1\\html4css1.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\s5defs.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\s5defs.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\medium-white\\framing.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-white\\framing.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomscr.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomscr.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\README.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\README.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\small-white\\framing.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-white\\framing.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isotech.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isotech.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\slides.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\slides.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isogrk1.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk1.txt',
+   'DATA'),
+  ('docutils\\writers\\odf_odt\\styles.odt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\odf_odt\\styles.odt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\small-white\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-white\\pretty.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamsn.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsn.txt',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\math.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\math.css',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\medium-black\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-black\\pretty.css',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\s5-core.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\s5-core.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isolat2.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isolat2.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\pretty.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isolat1.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isolat1.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomscr-wide.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomscr-wide.txt',
+   'DATA'),
+  ('docutils\\writers\\pep_html\\pep.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\pep_html\\pep.css',
+   'DATA'),
+  ('docutils\\writers\\latex2e\\titlepage.tex',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\titlepage.tex',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamsa.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsa.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\small-black\\__base__',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-black\\__base__',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\big-white\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-white\\pretty.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomopf.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomopf.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamsc.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsc.txt',
+   'DATA'),
+  ('docutils\\writers\\latex2e\\default.tex',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\default.tex',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\template.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\template.txt',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\plain.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\plain.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\xhtml1-lat1.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-lat1.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\medium-black\\__base__',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-black\\__base__',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\big-black\\__base__',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\__base__',
+   'DATA'),
+  ('docutils\\writers\\latex2e\\docutils.sty',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\docutils.sty',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\medium-white\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\medium-white\\pretty.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isocyr2.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isocyr2.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isonum.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isonum.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\small-black\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\small-black\\pretty.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\mmlalias.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlalias.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamsb.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsb.txt',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\responsive.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\responsive.css',
+   'DATA'),
+  ('docutils\\writers\\latex2e\\xelatex.tex',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\xelatex.tex',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\mmlextra.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlextra.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isobox.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isobox.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isodia.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isodia.txt',
+   'DATA'),
+  ('docutils\\writers\\latex2e\\titlingpage.tex',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\latex2e\\titlingpage.tex',
+   'DATA'),
+  ('docutils\\writers\\pep_html\\template.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\pep_html\\template.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomfrk-wide.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomfrk-wide.txt',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\minimal.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\minimal.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isogrk4-wide.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isogrk4-wide.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomfrk.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomfrk.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\xhtml1-special.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-special.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamso.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamso.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\framing.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\framing.css',
+   'DATA'),
+  ('docutils\\writers\\html5_polyglot\\tuftig.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html5_polyglot\\tuftig.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isocyr1.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isocyr1.txt',
+   'DATA'),
+  ('docutils\\writers\\html4css1\\template.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\html4css1\\template.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\big-black\\framing.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\framing.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isomopf-wide.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isomopf-wide.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\big-white\\framing.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-white\\framing.css',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\print.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\print.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\README.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\README.txt',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\isoamsr.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\isoamsr.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\big-black\\pretty.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\big-black\\pretty.css',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\opera.css',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\opera.css',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\xhtml1-symbol.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\xhtml1-symbol.txt',
+   'DATA'),
+  ('docutils\\writers\\s5_html\\themes\\default\\slides.js',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\writers\\s5_html\\themes\\default\\slides.js',
+   'DATA'),
+  ('docutils\\parsers\\rst\\include\\mmlextra-wide.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\docutils\\parsers\\rst\\include\\mmlextra-wide.txt',
    'DATA'),
   ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\RECORD',
    'C:\\Users\\Nur '
@@ -1475,13 +1467,21 @@
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\LICENSE.txt',
    'DATA'),
-  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
    'C:\\Users\\Nur '
-   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
    'DATA'),
   ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\REQUESTED',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\REQUESTED',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
+   'C:\\Users\\Nur '
+   'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
    'DATA'),
   ('cv2\\__init__.py',
    'C:\\Users\\Nur '
@@ -1582,7 +1582,7 @@
  [],
  False,
  False,
- 1737162059,
+ 1737168838,
  [('run.exe',
    'C:\\Users\\Nur '
    'Jamiludin\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

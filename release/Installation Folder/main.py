@@ -23,18 +23,24 @@ colors = {
     "Light" : {"StatusBar": "E0E0E0","AppBar": "#202020","Background": "#EEEEEE","CardsDialogs": "#FFFFFF","FlatButtonDown": "#CCCCCC","Text": "#000000",},
     "Dark"  : {"StatusBar": "101010","AppBar": "#E0E0E0","Background": "#111111","CardsDialogs": "#222222","FlatButtonDown": "#DDDDDD","Text": "#FFFFFF",},
 }
-
+config_name = 'config.ini'
 if getattr(sys, 'frozen', False):
-    app_path = os.path.dirname(os.path.abspath(__file__))
+    application_path = os.path.dirname(sys.executable)
+    running_mode = 'Frozen/executable'
 else:
-    app_path = os.path.dirname(os.path.abspath(__file__))
+    try:
+        app_full_path = os.path.realpath(__file__)
+        application_path = os.path.dirname(app_full_path)
+        running_mode = "Non-interactive (e.g. 'python myapp.py')"
+    except NameError:
+        application_path = os.getcwd()
+        running_mode = 'Interactive'
 
-config_path = os.path.join(app_path, 'config.ini')
-print(f"Path config.ini: {config_path}")
-
+config_full_path = os.path.join(application_path, config_name)
 config = configparser.ConfigParser()
-config.read(config_path)
+config.read(config_full_path)
 
+# SQL setting
 DB_HOST = config['mysql']['DB_HOST']
 DB_USER = config['mysql']['DB_USER']
 DB_PASSWORD = config['mysql']['DB_PASSWORD']
@@ -43,15 +49,23 @@ TB_DATA = config['mysql']['TB_DATA']
 TB_USER = config['mysql']['TB_USER']
 TB_MERK = config['mysql']['TB_MERK']
 
-STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
-
-SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
+# system setting
+TIME_OUT = int(config['setting']['TIME_OUT'])
+COUNT_STARTING = int(config['setting']['COUNT_STARTING'])
+COUNT_ACQUISITION = int(config['setting']['COUNT_ACQUISITION'])
+UPDATE_CAROUSEL_INTERVAL = float(config['setting']['UPDATE_CAROUSEL_INTERVAL'])
+UPDATE_CONNECTION_INTERVAL = float(config['setting']['UPDATE_CONNECTION_INTERVAL'])
+GET_DATA_INTERVAL = float(config['setting']['GET_DATA_INTERVAL'])
 
 MODBUS_IP_PLC = config['setting']['MODBUS_IP_PLC']
+MODBUS_CLIENT = ModbusTcpClient(MODBUS_IP_PLC)
+REGISTER_DATA_SIDE_SLIP = config['setting']['REGISTER_DATA_SPEED']
 
-COUNT_STARTING = 0
-COUNT_ACQUISITION = 10
-TIME_OUT = 500
+# sensor setting
+SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
+
+# system standard
+STANDARD_MAX_SIDE_SLIP = float(config['standard']['STANDARD_MAX_SIDE_SLIP']) # in mm
 
 db_side_slip_value = np.array([0.0])
 dt_side_slip_value = 0
@@ -80,15 +94,15 @@ class ScreenHome(MDScreen):
         Clock.schedule_once(self.delayed_init, 1)
 
     def delayed_init(self, dt):
-        Clock.schedule_interval(self.regular_update_display, 3)
+        Clock.schedule_interval(self.regular_update_carousel, UPDATE_CAROUSEL_INTERVAL)
 
-    def regular_update_display(self, dt):
+    def regular_update_carousel(self, dt):
         try:
             self.ids.carousel.index += 1
             
         except Exception as e:
-            toast_msg = f'Error Update Display: {e}'
-            toast(toast_msg)                
+            toast_msg = f'Error Update Carousel: {e}'
+            toast(toast_msg)                   
 
     def exec_navigate_home(self):
         try:
@@ -211,7 +225,7 @@ class ScreenMain(MDScreen):
         count_get_data = COUNT_ACQUISITION
         
         Clock.schedule_interval(self.regular_update_display, 1)
-        Clock.schedule_interval(self.regular_update_connection, 10)
+        Clock.schedule_interval(self.regular_update_connection, UPDATE_CONNECTION_INTERVAL)
         self.exec_reload_database()
         self.exec_reload_table()
 
@@ -301,7 +315,7 @@ class ScreenMain(MDScreen):
 
             if(count_starting <= 0):
                 screen_sideslip_meter.ids.lb_test_subtitle.text = "HASIL PENGUKURAN"
-                screen_sideslip_meter.ids.lb_side_slip.text = str(np.round(dt_side_slip_value, 2))
+                screen_sideslip_meter.ids.lb_side_slip.text = str(dt_side_slip_value)
                 if((dt_side_slip_value <= STANDARD_MAX_SIDE_SLIP) and (dt_side_slip_value >= -STANDARD_MAX_SIDE_SLIP)):
                     screen_sideslip_meter.ids.lb_info.text = f"Ambang Batas Bergesernya Roda Kendaraan adalah {STANDARD_MAX_SIDE_SLIP} mm,\nPergeseran Roda Kendaraan Anda Dalam Range Ambang Batas"
                 else:
@@ -371,10 +385,10 @@ class ScreenMain(MDScreen):
 
             if flag_conn_stat:
                 modbus_client.connect()
-                side_slip_registers = modbus_client.read_holding_registers(1612, count=1) #V1100
+                side_slip_registers = modbus_client.read_holding_registers(REGISTER_DATA_SIDE_SLIP, count=1, slave=1) #V1100
                 modbus_client.close()
 
-                dt_side_slip_value = (side_slip_registers.registers[0] / 10) - (SENSOR_LENGTH / 2)
+                dt_side_slip_value = np.round((side_slip_registers.registers[0] / 10) - (SENSOR_LENGTH / 2), 2)
                 db_side_slip_value = np.append(db_side_slip_value, dt_side_slip_value)
                 dt_side_slip_value = np.max(db_side_slip_value)
                 
@@ -455,7 +469,7 @@ class ScreenMain(MDScreen):
         if (dt_user != ''):
             if (dt_side_slip_flag == 'Belum Tes'):
                 if(not flag_play):
-                    Clock.schedule_interval(self.regular_get_data, 1)
+                    Clock.schedule_interval(self.regular_get_data, GET_DATA_INTERVAL)
                     self.open_screen_sideslip_meter()
                     flag_play = True
             else:
@@ -518,7 +532,7 @@ class ScreenSideSlipMeter(MDScreen):
         count_get_data = COUNT_ACQUISITION
 
         if(not flag_play):
-            Clock.schedule_interval(screen_main.regular_get_data, 1)
+            Clock.schedule_interval(screen_main.regular_get_data, GET_DATA_INTERVAL)
             flag_play = True
 
     def exec_reload(self):
@@ -535,7 +549,7 @@ class ScreenSideSlipMeter(MDScreen):
         self.ids.lb_side_slip.text = "..."
 
         if(not flag_play):
-            Clock.schedule_interval(screen_main.regular_get_data, 1)
+            Clock.schedule_interval(screen_main.regular_get_data, GET_DATA_INTERVAL)
             flag_play = True
 
     def exec_save(self):
