@@ -59,7 +59,7 @@ GET_DATA_INTERVAL = float(config['setting']['GET_DATA_INTERVAL'])
 
 MODBUS_IP_PLC = config['setting']['MODBUS_IP_PLC']
 MODBUS_CLIENT = ModbusTcpClient(MODBUS_IP_PLC)
-REGISTER_DATA_SIDE_SLIP = config['setting']['REGISTER_DATA_SIDE_SLIP']
+REGISTER_DATA_SIDE_SLIP = int(config['setting']['REGISTER_DATA_SIDE_SLIP'])
 
 # sensor setting
 SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
