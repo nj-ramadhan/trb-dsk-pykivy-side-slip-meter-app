@@ -49,10 +49,11 @@ SENSOR_LENGTH = float(config['setting']['SENSOR_LENGTH']) # in mm
 
 MODBUS_IP_PLC = config['setting']['MODBUS_IP_PLC']
 
-COUNT_STARTING = 3
-COUNT_ACQUISITION = 5
+COUNT_STARTING = 0
+COUNT_ACQUISITION = 10
 TIME_OUT = 500
 
+db_side_slip_value = np.array([0.0])
 dt_side_slip_value = 0
 dt_side_slip_flag = 0
 dt_side_slip_user = 1
@@ -355,7 +356,7 @@ class ScreenMain(MDScreen):
 
     def regular_get_data(self, dt):
         global count_starting, count_get_data
-        global dt_side_slip_value
+        global db_side_slip_value, dt_side_slip_value
         global flag_play
         try:
             if(count_starting > 0):
@@ -374,6 +375,8 @@ class ScreenMain(MDScreen):
                 modbus_client.close()
 
                 dt_side_slip_value = (side_slip_registers.registers[0] / 10) - (SENSOR_LENGTH / 2)
+                db_side_slip_value = np.append(db_side_slip_value, dt_side_slip_value)
+                dt_side_slip_value = np.max(db_side_slip_value)
                 
         except Exception as e:
             toast_msg = f'Error Get Data: {e}'
@@ -520,12 +523,13 @@ class ScreenSideSlipMeter(MDScreen):
 
     def exec_reload(self):
         global flag_play
-        global count_starting, count_get_data, dt_side_slip_value
+        global count_starting, count_get_data, dt_side_slip_value, db_side_slip_value
 
         screen_main = self.screen_manager.get_screen('screen_main')
 
         count_starting = COUNT_STARTING
         count_get_data = COUNT_ACQUISITION
+        db_side_slip_value = np.array([0.0])
         dt_side_slip_value = 0
         self.ids.bt_reload.disabled = True
         self.ids.lb_side_slip.text = "..."

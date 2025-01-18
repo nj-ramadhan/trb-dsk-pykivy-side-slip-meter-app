@@ -2,7 +2,7 @@
 venv/
 
 # Ignore PyInstaller build and distribution folders
-/build/
+build/
 dist/
 *.spec
 
