@@ -1,3 +1,5 @@
+from kivy.config import Config
+Config.set('kivy', 'keyboard_mode', 'systemanddock')
 from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.core.window import Window

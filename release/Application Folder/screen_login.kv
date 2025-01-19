@@ -130,15 +130,15 @@
 				MDBoxLayout:
 					orientation: "vertical"
 					size_hint_x: 0.9
-					padding: 50
-					spacing: 30
+					spacing: 20
 
 					MDLabel:
 						text: "SILAHKAN LOGIN"
 						halign: "center"
 						valign: "middle"
-						font_style: 'H4'
+						font_style: 'H6'
 						theme_text_color: "Custom"
+						size_hint_y: 0.05
 						
 					MDTextField:
 						id: tx_username
@@ -153,6 +153,7 @@
 						icon_left_color_focus: "#4471C4"				
 						mode: "rectangle"
 						on_text_validate: root.exec_login()
+						size_hint_y: 0.15
 
 					MDTextField:
 						id: tx_password
@@ -168,16 +169,18 @@
 						mode: "rectangle"
 						password: True
 						on_text_validate: root.exec_login()
+						size_hint_y: 0.15
 
 					MDBoxLayout:
 						orientation: "horizontal"
 						spacing: 100
+						size_hint_y: 0.15
 
 						MDRectangleFlatIconButton:
 							id: bt_login
 							type: "large"
 							size_hint_x: 0.5
-							size_hint_y: 0.4
+							size_hint_y: 1
 							icon: "login"
 							text:"MASUK"
 							text_color: "#EEEEEE"
@@ -189,13 +192,17 @@
 							id: bt_cancel
 							type: "large"
 							size_hint_x: 0.5
-							size_hint_y: 0.4
+							size_hint_y: 1
 							icon: "cancel"
 							text:"BATAL"
 							text_color: "#EEEEEE"
 							md_bg_color: "#FF2A2A"
 							font_style: 'H6'
 							on_press: root.exec_cancel()
+
+					MDBoxLayout:
+						orientation: "horizontal"
+						size_hint_y: 0.5
 
 		# footer layout
         MDBoxLayout:
