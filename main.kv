@@ -4,6 +4,7 @@
 #:include screen_home.kv
 #:include screen_login.kv
 #:include screen_main.kv
+#:include screen_calibration.kv
 #:include screen_sideslip_meter.kv
 
 # ScreenManager:
@@ -24,10 +25,14 @@
     ScreenMain:
         id: screen_main
         name: 'screen_main'
-        screen_manager: screen_manager 
+        screen_manager: screen_manager
+
+    ScreenCalibration:
+        id: screen_calibration
+        name: 'screen_calibration'
+        screen_manager: screen_manager
 
     ScreenSideSlipMeter:
         id: screen_sideslip_meter
         name: 'screen_sideslip_meter'
         screen_manager: screen_manager   
-

@@ -116,9 +116,8 @@
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
-
 							MDLabel:
-								id: lb_no_antrian
+								id: lb_no_antri
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
@@ -126,11 +125,10 @@
 						MDBoxLayout:
 							orientation: "horizontal"
 							MDLabel:
-								text: "No. Reg"
+								text: "No. Polisi"
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
-
 							MDLabel:
 								id: lb_no_pol
 								halign: "left"
@@ -144,7 +142,6 @@
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
-
 							MDLabel:
 								id: lb_no_uji
 								halign: "left"
@@ -154,13 +151,38 @@
 						MDBoxLayout:
 							orientation: "horizontal"
 							MDLabel:
-								text: "Nama"
+								text: "Status Uji"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_sts_uji
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
 
+						MDBoxLayout:
+							orientation: "horizontal"
 							MDLabel:
-								id: lb_nama
+								text: "Merk"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_merk
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Type"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_type
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
@@ -172,9 +194,60 @@
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
-
 							MDLabel:
-								id: lb_jenis_kendaraan
+								id: lb_jns_kend
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "JBB"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_jbb
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Berat Kosong"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_brt_ksg
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Bahan Bakar"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_bhn_bkr
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+
+						MDBoxLayout:
+							orientation: "horizontal"
+							MDLabel:
+								text: "Warna"
+								halign: "left"
+								valign: "middle"
+								font_style: 'H6'
+							MDLabel:
+								id: lb_warna
 								halign: "left"
 								valign: "middle"
 								font_style: 'H6'
@@ -208,13 +281,21 @@
 							pos_hint: {'x':.0, 'y':.15}
 
 						MDLabel:
-							id: lb_side_slip
+							id: lb_sideslip_val
 							text: "..."
 							halign: "center"
 							valign: "middle"
-							font_style: 'Display'
+							font_style: 'H1'
 							font_size: '80dp'
 							pos_hint: {'x':.0, 'y':.0}
+
+						MDLabel:
+							text: "mm"
+							halign: "center"
+							valign: "middle"
+							font_style: 'H2'
+							font_size: '30dp'
+							pos_hint: {'x':0.13, 'y':0.0}
 
 						MDRectangleFlatIconButton:
 						# MDFloatingActionButton:
@@ -250,8 +331,6 @@
 							pos_hint: {'x':.575, 'y':.06}
 							on_press: root.open_screen_main()
 
-
-									
 		# footer layout
         MDBoxLayout:
             orientation: "horizontal"
@@ -264,12 +343,14 @@
 				md_bg_color: "#4471C4"
 				size_hint_x: 0.4
 				
-				Image:
+				AsyncImage:
+					id: img_pemkab
 					source:'assets/images/logo-sorong.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 
-				Image:
+				AsyncImage:
+					id: img_dishub
 					source:'assets/images/logo-dishub.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
@@ -278,25 +359,35 @@
 					orientation: "vertical"
 					size_hint_x: 0.8
 
-					MDLabel:			
+					MDLabel:
+						id: lb_pemkab
 						text: "PEMERINTAH KABUPATEN SORONG"
 						halign: "left"
 						valign: "middle"
-						font_style: 'Subtitle1'
-
-					MDLabel:			
-						text: "DINAS PERHUBUNGAN"
-						halign: "left"
-						valign: "middle"
-						font_style: 'Subtitle1'
-
-					MDLabel:			
-						text: "UNIT PELAKSANA UJI BERKALA KENDARAAN BERMOTOR"
-						halign: "left"
-						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"						
 						font_style: 'Subtitle1'
 
 					MDLabel:
+						id: lb_dishub
+						text: "DINAS PERHUBUNGAN"
+						halign: "left"
+						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"
+						font_style: 'Subtitle1'
+
+					MDLabel:
+						id: lb_unit			
+						text: "UNIT PELAKSANA UJI BERKALA KENDARAAN BERMOTOR"
+						halign: "left"
+						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"
+						font_style: 'Subtitle1'
+
+					MDLabel:
+						id: lb_unit_address
 						text: " Klamasen, Distrik Mariat, Kabupaten Sorong, Papua Barat Daya. 98416"
 						halign: "left"
 						valign: "middle"
@@ -320,7 +411,7 @@
 
 				MDLabel:
 					id: lb_info
-					text: "Ambang Batas Bergesernya Roda Kendaraan adalah 50 mm"
+					text: "SPEED TEST"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H6'
