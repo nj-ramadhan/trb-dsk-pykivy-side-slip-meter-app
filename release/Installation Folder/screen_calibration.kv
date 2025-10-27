@@ -1,0 +1,362 @@
+#:kivy 2.1.0
+
+<ScreenCalibration>:
+    MDBoxLayout:
+        orientation: "vertical"
+
+        # ===================================================================
+        # HEADER LAYOUT (TETAP SAMA SESUAI PERMINTAAN)
+        # ===================================================================
+        MDBoxLayout:
+            id: header_layout
+            orientation: "horizontal"
+            padding: 20
+            spacing: 20
+            size_hint_y: 0.2
+            md_bg_color: "#111111"
+
+            Image:
+                id: logo
+                source:'assets/images/logo-trb.png'
+                size_hint_x: 0.15
+                allow_stretch: True
+
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint_x: 0.7
+
+                MDLabel:
+                    id: lb_title
+                    text: "VEHICLE INSPECTION INTEGRATION MANAGEMENT SYSTEM"
+                    halign: "left"
+                    valign: "middle"
+                    font_style: 'H4'
+                    theme_text_color: "Custom"
+                    text_color: "#FFFFFF"
+
+                MDLabel:
+                    id: lb_subtitle
+                    text: "SPEED & SIDE SLIP METER"
+                    halign: "left"
+                    valign: "middle"
+                    font_style: 'H5'
+                    theme_text_color: "Custom"
+                    text_color: "#FFFFFF"
+
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint_x: 0.15
+
+                MDLabel:
+                    id: lb_time
+                    text: "12:34:00"
+                    halign: "center"
+                    valign: "middle"
+                    font_style: 'H6'
+                    theme_text_color: "Custom"
+                    text_color: "#FFFFFF"
+
+                MDLabel:
+                    id: lb_date
+                    text: "17/08/2024"
+                    halign: "center"
+                    valign: "middle"
+                    font_style: 'H6'
+                    theme_text_color: "Custom"
+                    text_color: "#FFFFFF"
+
+                MDLabel:
+                    id: lb_operator
+                    text: "Nama Operator"
+                    halign: "center"
+                    valign: "middle"
+                    font_style: 'H6'
+                    theme_text_color: "Custom"
+                    text_color: "#FFFFFF"
+
+                MDLabel:
+                    id: lb_comm
+                    text: "Status : Disconnected"
+                    halign: "center"
+                    valign: "middle"
+                    font_style: 'H6'
+                    theme_text_color: "Custom"
+
+        # ===================================================================
+        # MAIN LAYOUT (BAGIAN INI YANG DIGANTI)
+        # ===================================================================
+        MDBoxLayout:
+            id: layout_main
+            orientation: "vertical"
+            size_hint_y: 0.7
+            padding: 20
+            spacing: 20
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: 20
+
+                # --- SISI KIRI: Tampilan Real-time ---
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.5
+                    spacing: 15
+
+                    MDLabel:
+                        text: "Tampilan Real-Time"
+                        halign: "center"
+                        font_style: 'H5'
+                        size_hint_y: 0.1
+
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        md_bg_color: "#F0F0F0"
+                        padding: 10
+                        MDLabel:
+                            text: "Nilai Raw Sensor (Reg: 1622)"
+                            halign: "center"
+                            font_style: 'H6'
+                        MDLabel:
+                            id: lb_raw_value
+                            text: "..."
+                            halign: "center"
+                            font_style: 'H2'
+                            bold: True
+
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        md_bg_color: "#F0F0F0"
+                        padding: 10
+                        MDLabel:
+                            text: "Nilai Hasil Skala PLC (Reg: 1612)"
+                            halign: "center"
+                            font_style: 'H6'
+                        MDLabel:
+                            id: lb_scaled_value
+                            text: "..."
+                            halign: "center"
+                            font_style: 'H2'
+                            bold: True
+
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        md_bg_color: "#E0E0E0"
+                        padding: 10
+                        MDLabel:
+                            text: "Nilai Final Sideslip (Setelah Offset)"
+                            halign: "center"
+                            font_style: 'H6'
+                        MDLabel:
+                            id: lb_final_value
+                            text: "0.00"
+                            halign: "center"
+                            font_style: 'H2'
+                            bold: True
+                            theme_text_color: "Custom"
+                            text_color: "#2CA02C"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.5
+                    spacing: 15
+
+                    MDLabel:
+                        text: "Parameter Kalibrasi"
+                        halign: "center"
+                        font_style: 'H5'
+                        size_hint_y: 0.1
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: 0.1
+                        MDLabel:
+                            text: "Raw Min (Reg: 1614)"
+                            size_hint_x: 0.4
+                        MDTextField:
+                            id: tx_raw_min
+                            hint_text: "Nilai Raw Kiri"
+                            input_filter: 'int'
+                            size_hint_x: 0.6
+                            line_color_focus: "#4471C4"
+                            text_color_focus: "#000000"
+                    
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: 0.1
+                        MDLabel:
+                            text: "Raw Max (Reg: 1615)"
+                            size_hint_x: 0.4
+                        MDTextField:
+                            id: tx_raw_max
+                            hint_text: "Nilai Raw Kanan"
+                            input_filter: 'int'
+                            size_hint_x: 0.6
+                            line_color_focus: "#4471C4"
+                            text_color_focus: "#000000"
+                    
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: 0.1
+                        MDLabel:
+                            text: "Display Min (Reg: 1616)"
+                            size_hint_x: 0.4
+                        MDTextField:
+                            id: tx_display_min
+                            hint_text: "Target Kiri (misal: 0)"
+                            input_filter: 'int'
+                            size_hint_x: 0.6
+                            line_color_focus: "#4471C4"
+                            text_color_focus: "#000000"
+                    
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: 0.1
+                        MDLabel:
+                            text: "Display Max (Reg: 1617)"
+                            size_hint_x: 0.4
+                        MDTextField:
+                            id: tx_display_max
+                            hint_text: "Target Kanan (misal: 320)"
+                            input_filter: 'int'
+                            size_hint_x: 0.6
+                            line_color_focus: "#4471C4"
+                            text_color_focus: "#000000"
+                    
+                    MDSeparator:
+                        height: "2dp"
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: 0.1
+                        MDLabel:
+                            text: "Jarak Sideslip (Offset)"
+                            size_hint_x: 0.4
+                        MDTextField:
+                            id: tx_offset_nol
+                            hint_text: "Nilai Tengah (misal: 160)"
+                            input_filter: 'float'
+                            size_hint_x: 0.6
+                            ine_color_focus: "#4471C4"
+                            text_color_focus: "#000000"
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        spacing: 10
+                        size_hint_y: 0.2
+                        padding: [0, 15, 0, 0]
+
+                        MDRectangleFlatIconButton:
+                            id: bt_kirim_kalibrasi
+                            icon: "send"
+                            text: "KIRIM"
+                            md_bg_color: "#2CA02C"
+                            text_color: "#FFFFFF"
+                            size_hint_x: 1
+                            on_press: root.send_calibration_to_plc()
+                            
+                        MDRectangleFlatIconButton:
+                            id: bt_set_default
+                            icon: "backup-restore"
+                            text: "RESET"
+                            md_bg_color: "#C44444"
+                            text_color: "#FFFFFF"
+                            size_hint_x: 1
+                            on_press: root.reset_calibration_default()
+
+            MDRectangleFlatIconButton:
+                id: bt_back
+                text: "KEMBALI"
+                icon: "arrow-left"
+                theme_text_color: "Custom"
+                text_color: "#EEEEEE"
+                md_bg_color: "#4471C4"
+                size_hint_x: 0.3
+                pos_hint: {'center_x': 0.5}
+                on_press: root.exec_navigate_main()
+
+        # ===================================================================
+        # FOOTER LAYOUT (TETAP SAMA SESUAI PERMINTAAN)
+        # ===================================================================
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: 20
+                spacing: 20
+                md_bg_color: "#4471C4"
+                size_hint_x: 0.4
+
+                AsyncImage:
+                    id: img_pemkab
+                    source:'assets/images/logo-sorong.png'
+                    size_hint_x: 0.1
+                    allow_stretch: True
+
+                AsyncImage:
+                    id: img_dishub
+                    source:'assets/images/logo-dishub.png'
+                    size_hint_x: 0.1
+                    allow_stretch: True
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    size_hint_x: 0.8
+
+                    MDLabel:
+                        id: lb_pemkab
+                        text: "PEMERINTAH KABUPATEN SORONG"
+                        halign: "left"
+                        valign: "middle"
+                        theme_text_color: "Custom"
+                        text_color: "#EEEEEE"
+                        font_style: 'Subtitle1'
+
+                    MDLabel:
+                        id: lb_dishub
+                        text: "DINAS PERHUBUNGAN"
+                        halign: "left"
+                        valign: "middle"
+                        theme_text_color: "Custom"
+                        text_color: "#EEEEEE"
+                        font_style: 'Subtitle1'
+
+                    MDLabel:
+                        id: lb_unit
+                        text: "UNIT PELAKSANA UJI BERKALA KENDARAAN BERMOTOR"
+                        halign: "left"
+                        valign: "middle"
+                        theme_text_color: "Custom"
+                        text_color: "#EEEEEE"
+                        font_style: 'Subtitle1'
+
+                    MDLabel:
+                        id: lb_unit_address
+                        text: " Klamasen, Distrik Mariat, Kabupaten Sorong, Papua Barat Daya. 98416"
+                        halign: "left"
+                        valign: "middle"
+                        md_bg_color: "#EEEEEE"
+                        theme_text_color: "Custom"
+                        text_color: "#000000"
+                        font_style: 'Subtitle1'
+
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: 20
+                spacing: 20
+                md_bg_color: "#FFC000"
+                size_hint_x: 0.6
+
+                MDLabel:
+                    text: "INFORMASI"
+                    halign: "left"
+                    valign: "middle"
+                    font_style: 'H5'
+
+                MDLabel:
+                    id: lb_info
+                    text: ""
+                    halign: "left"
+                    valign: "middle"
+                    font_style: 'H6'

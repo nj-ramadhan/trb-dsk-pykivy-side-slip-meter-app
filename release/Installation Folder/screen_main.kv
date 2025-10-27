@@ -24,7 +24,7 @@
 				size_hint_x: 0.7
 
 				MDLabel:
-					id: title            
+					id: lb_title            
 					text: "VEHICLE INSPECTION INTEGRATION MANAGEMENT SYSTEM"
 					halign: "left"
 					valign: "middle"
@@ -34,8 +34,8 @@
 
 
 				MDLabel:
-					id: subtitle            
-					text: "SIDE SLIP METER"
+					id: lb_subtitle            
+					text: "SPEED & SIDE SLIP METER"
 					halign: "left"
 					valign: "middle"
 					font_style: 'H5'
@@ -112,7 +112,8 @@
                         on_press: root.exec_navigate_login()
 						md_bg_color: "#EEEEEE"
                         padding: 10
-						Image:
+						AsyncImage:
+							id: img_user
 							source:'assets/images/icon-login.png'
 							size_hint_x: 0.15
 							allow_stretch: True 
@@ -201,8 +202,38 @@
 							theme_text_color: "Custom"
 							text_color: "#EEEEEE"
 							md_bg_color: "#4471C4"
-							size_hint_x: 0.3
+							size_hint_x: 0.2
 							on_press: root.exec_reload_table()
+
+						MDRectangleFlatIconButton:
+							id: bt_calibrate
+							icon: "gauge"
+							text: "CALIBRATE"
+							theme_text_color: "Custom"
+							text_color: "#EEEEEE"
+							md_bg_color: "#2CA02C"
+							size_hint_x: 0.2
+							on_press: root.exec_navigate_calibration()
+
+						# MDRectangleFlatIconButton:
+						# 	id: bt_add_data
+						# 	icon: "plus"
+						# 	text: "DATA UJI BARU"
+						# 	theme_text_color: "Custom"
+						# 	text_color: "#EEEEEE"
+						# 	md_bg_color: "#2CA02C"
+						# 	size_hint_x: 0.2
+						# 	on_press: root.exec_navigate_add_data()
+
+						# MDRectangleFlatIconButton:
+						# 	id: bt_add_queue
+						# 	icon: "plus"
+						# 	text: "TAMBAH ANTRIAN"	
+						# 	theme_text_color: "Custom"
+						# 	text_color: "#EEEEEE"
+						# 	md_bg_color: "#2CA02C"
+						# 	size_hint_x: 0.2
+						# 	on_press: root.exec_navigate_add_queue()
 
 						MDRectangleFlatIconButton:
 							id: bt_logout
@@ -211,9 +242,9 @@
 							theme_text_color: "Custom"
 							text_color: "#EEEEEE"
 							md_bg_color: "#FF2A2A"
-							size_hint_x: 0.3
+							size_hint_x: 0.25
 							on_press: root.exec_logout()
-														
+
 					MDBoxLayout:
 						orientation: "horizontal"
 						md_bg_color: "#FFFFFF"
@@ -228,11 +259,11 @@
 							size_hint_x: 0.05
 
 						MDLabel:
-							text: "No. Pol"
+							text: "No. Reg"
 							halign: "left"
 							valign: "middle"
 							font_style: 'Subtitle1'
-							size_hint_x: 0.08
+							size_hint_x: 0.07
 
 						MDLabel:
 							text: "No. Uji"
@@ -246,14 +277,7 @@
 							halign: "left"
 							valign: "middle"
 							font_style: 'Subtitle1'
-							size_hint_x: 0.08
-
-						MDLabel:
-							text: "Nama"
-							halign: "left"
-							valign: "middle"
-							font_style: 'Subtitle1'
-							size_hint_x: 0.12
+							size_hint_x: 0.07
 
 						MDLabel:
 							text: "Merk"
@@ -267,7 +291,7 @@
 							halign: "left"
 							valign: "middle"
 							font_style: 'Subtitle1'
-							size_hint_x: 0.05
+							size_hint_x: 0.07
 
 						MDLabel:
 							text: "Jenis"
@@ -278,6 +302,13 @@
 
 						MDLabel:
 							text: "JBB"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.05
+
+						MDLabel:
+							text: "Berat Kosong"
 							halign: "left"
 							valign: "middle"
 							font_style: 'Subtitle1'
@@ -295,7 +326,14 @@
 							halign: "left"
 							valign: "middle"
 							font_style: 'Subtitle1'
-							size_hint_x: 0.08
+							size_hint_x: 0.11
+
+						MDLabel:
+							text: "Sideslip"
+							halign: "left"
+							valign: "middle"
+							font_style: 'Subtitle1'
+							size_hint_x: 0.07
 
 					MDScrollView:
 						id: layout_scroll
@@ -316,12 +354,14 @@
 				md_bg_color: "#4471C4"
 				size_hint_x: 0.4
 				
-				Image:
+				AsyncImage:
+					id: img_pemkab
 					source:'assets/images/logo-sorong.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
 
-				Image:
+				AsyncImage:
+					id: img_dishub
 					source:'assets/images/logo-dishub.png'
 					size_hint_x: 0.1
 					allow_stretch: True  
@@ -330,25 +370,35 @@
 					orientation: "vertical"
 					size_hint_x: 0.8
 
-					MDLabel:			
+					MDLabel:
+						id: lb_pemkab
 						text: "PEMERINTAH KABUPATEN SORONG"
 						halign: "left"
 						valign: "middle"
-						font_style: 'Subtitle1'
-
-					MDLabel:			
-						text: "DINAS PERHUBUNGAN"
-						halign: "left"
-						valign: "middle"
-						font_style: 'Subtitle1'
-
-					MDLabel:			
-						text: "UNIT PELAKSANA UJI BERKALA KENDARAAN BERMOTOR"
-						halign: "left"
-						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"						
 						font_style: 'Subtitle1'
 
 					MDLabel:
+						id: lb_dishub
+						text: "DINAS PERHUBUNGAN"
+						halign: "left"
+						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"
+						font_style: 'Subtitle1'
+
+					MDLabel:
+						id: lb_unit			
+						text: "UNIT PELAKSANA UJI BERKALA KENDARAAN BERMOTOR"
+						halign: "left"
+						valign: "middle"
+						theme_text_color: "Custom"
+						text_color: "#EEEEEE"
+						font_style: 'Subtitle1'
+
+					MDLabel:
+						id: lb_unit_address
 						text: " Klamasen, Distrik Mariat, Kabupaten Sorong, Papua Barat Daya. 98416"
 						halign: "left"
 						valign: "middle"
