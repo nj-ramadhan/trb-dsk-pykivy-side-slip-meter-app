@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VIIMS - Side Slip Meter Application"
-#define MyAppVersion "1.8.250119"
+#define MyAppVersion "2.1.251027"
 #define MyAppPublisher "PT. Tiga Ratu Berkarya"
-#define MyAppExeName "TRB-VIIMS-SideSlipMeterApp.exe"
+#define MyAppExeName "TRB-VIIMS-SideslipMeterApp-Sorong.exe"
 #define MyAppAssocName "VIIMS - Side Slip Meter Application Files"
 #define MyAppAssocExt ".msi"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
@@ -12,7 +12,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{B0DCDE8A-2B96-45E7-8919-CF3215AAF054}}
+AppId={{E5295385-D239-45CC-9D57-9FFC7841599C}}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
