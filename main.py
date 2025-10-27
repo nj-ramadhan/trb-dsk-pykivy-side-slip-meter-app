@@ -17,7 +17,7 @@ logger_name = f'app.log'
 logger_dir = os.path.join(application_path, "logs")
 
 from kivy.config import Config
-Config.set('kivy', 'keyboard_mode', 'system')
+Config.set('kivy', 'keyboard_mode', 'systemanddock')
 
 from kivy.logger import Logger
 from kivy.clock import Clock
@@ -539,7 +539,7 @@ class ScreenMain(MDScreen):
             else:
                 dt_dash_antri = result[0]
 
-                cursor.execute(f"SELECT noantrian, nopol, nouji, statusuji, merk, type, idjeniskendaraan, jbb, berat_kosong, bahan_bakar, warna, sideslip_flag FROM {TB_DATA} WHERE sideslip_flag = 0")
+                cursor.execute(f"SELECT noantrian, nopol, nouji, statusuji, merk, type, idjeniskendaraan, jbb, berat_kosong, bahan_bakar, warna, sideslip_flag FROM {TB_DATA} WHERE sideslip_flag = 2")
                 result_tb_antrian = cursor.fetchall()
                 db_antrian = np.array(result_tb_antrian).T
 
@@ -626,7 +626,7 @@ class ScreenMain(MDScreen):
         global count_starting, count_get_data
 
         if (dt_user != ''):
-            if (int(dt_sideslip_flag) == 0):
+            if (int(dt_sideslip_flag) == 2):
                 
                 count_starting = COUNT_STARTING_SIDESLIP
                 count_get_data = COUNT_ACQUISITION_SIDESLIP
