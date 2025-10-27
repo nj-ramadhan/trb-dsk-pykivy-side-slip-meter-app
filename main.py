@@ -891,8 +891,6 @@ class ScreenSideSlipMeter(MDScreen):
             tb_sideslip_data.execute(sql, sql_val)
             mydb.commit()
             self.open_screen_main()
-
-            self.exec_print()
             self.ids.bt_save.disabled = True
 
         except Exception as e:
