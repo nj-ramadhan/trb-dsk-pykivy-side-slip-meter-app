@@ -79,9 +79,9 @@ TB_BAHAN_BAKAR = "bahanbakar"
 TB_WARNA = "warna"
 TB_DATA_MASTER = "identkendaraan"
 
-FTP_HOST = "194.31.53.37"
+FTP_HOST = "156.67.217.60"
 FTP_USER = "root"
-FTP_PASS = "@D15HUBp2022!"
+FTP_PASS = "@D15HUBs2022!"
 
 ## System Setting
 TIME_OUT = int(config['setting']['TIME_OUT'])
@@ -424,9 +424,9 @@ class ScreenMain(MDScreen):
             screen_sideslip_meter.ids.lb_operator.text = f'Login Sebagai: \n{dt_user}' if dt_user != '' else 'Silahkan Login'
 
             if dt_user != '':
-                self.ids.img_user.source = f'https://{FTP_HOST}/ujikir/foto_user/{dt_foto_user}'
-                screen_home.ids.img_user.source = f'https://{FTP_HOST}/ujikir/foto_user/{dt_foto_user}'
-                screen_login.ids.img_user.source = f'https://{FTP_HOST}/ujikir/foto_user/{dt_foto_user}'
+                self.ids.img_user.source = f'https://{FTP_HOST}/file/foto_user/{dt_foto_user}'
+                screen_home.ids.img_user.source = f'https://{FTP_HOST}/file/foto_user/{dt_foto_user}'
+                screen_login.ids.img_user.source = f'https://{FTP_HOST}/file/foto_user/{dt_foto_user}'
             else:
                 self.ids.img_user.source = 'assets/images/icon-login.png'
                 screen_home.ids.img_user.source = 'assets/images/icon-login.png'
